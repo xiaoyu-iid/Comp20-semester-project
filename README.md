@@ -22,7 +22,10 @@ Play our game and get more knowledge about geometry (or other items). For exampl
 - We will collect user performance data (including scores, progress in the game, etc.) on the server. 
         
         Utilizing: Server-side data persistence
-- We will store username and profile pictures locally. 
+- We would ask for user’s Google accounts for secure log-in. 
+        
+        Utilizing: use Google Identity Platform API
+- We will store user-selected username and profile pictures locally. 
          
         Utilizing: Client-side data persistence 
 - We would create the game with a Javascript API. We will provide fancy animations of shapes falling and popping after being matched. 
