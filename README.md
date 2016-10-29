@@ -25,7 +25,8 @@ Play our game and get more knowledge about geometry (or other items). For exampl
 - We would ask for user’s Google accounts for secure log-in. 
         
         Utilizing: use Google Identity Platform API
-- We will store user-selected username and profile pictures locally. 
+        (NOTE: This one is optional, we will decide how much user's personal information we need to use when we implement the score ranking. )
+- We will store user's progress, as well as user-selected username and profile pictures(if we implement user login) locally. 
          
         Utilizing: Client-side data persistence 
 - We would create the game with a Javascript API. We will provide fancy animations of shapes falling and popping after being matched. 
@@ -34,16 +35,16 @@ Play our game and get more knowledge about geometry (or other items). For exampl
 - We will rank users after each game among all players in your area!
         
         Utilizing: Geolocation
-- We will present user’s hightest score and ranking to the user after each game. 
+- We will present scores and ranking to the user after each game. 
 
         Utilizing: Reporting with charts and graphs 
         
         
 ## What data will your prototype be using and collecting:
 
-- Locally store the user’s username and profile photo.
-- Collect and store the user’s personal scores.
+- Collect and store the users' scores.
 - Collect and store nearby players’ scores according to the user’s geolocation.
+- Locally store the user’s username and profile photo(optional).
 
 
 ## Algorithms or special techniques that will be necessary:
