@@ -59,3 +59,6 @@ Play our game and get more knowledge about geometry (or other items). For exampl
 ![Mockup 2 - begin games](https://github.com/tuftsdev/comp20-f2016-team8/blob/master/proposal-mockup/Mockup%202.png)
 ![Mockup 3 - game](https://github.com/tuftsdev/comp20-f2016-team8/blob/master/proposal-mockup/Mockup%203.png)
 ![Mockup 4 - scores & ranking](https://github.com/tuftsdev/comp20-f2016-team8/blob/master/proposal-mockup/Mockup%204.png)
+
+#Comments by Ming
+* Yes, we talked about this.  One thing missing: how will you be generating the shapes and cute animals to use in the game?
