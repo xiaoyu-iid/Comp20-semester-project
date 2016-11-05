@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>hello phaser!</title>
+        <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.js"></script>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+
+  
+
+        //  Note that this html file is set to pull down Phaser 2.5.0 from the JS Delivr CDN.
+        //  Although it will work fine with this tutorial, it's almost certainly not the most current version.
+        //  Be sure to replace it with an updated version before you start experimenting with adding your own code.
+
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create });
+
+        function preload() {
+
+    //  You can fill the preloader with as many assets as your game requires
+
+    //  Here we are loading an image. The first parameter is the unique
+    //  string by which we'll identify the image later in our code.
+
+    //  The second parameter is the URL of the image (relative)
+            game.load.image('logo', 'phaser.png');
+        }
+
+        function create() {
+
+    //  This creates a simple sprite that is using our loaded image and
+    //  displays it on-screen
+    //  and assign it to a variable
+        var image = game.add.sprite(0, 0, 'logo');
+
+            game.physics.enable(image, Phaser.Physics.ARCADE);
+
+            image.body.velocity.x=150;
+
+        }
+
+    
+
+    </script>
+
+    </body>
+</html>
