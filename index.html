@@ -12,12 +12,13 @@
     </head>
     <body>
 
-   	<!-- testing facebook login -->
+   	<!-- testing facebook login 
+   	      not working yet because we need permission from facebook linked to our web 
     <script lang= "javascript" src = "facebooklogin.js"></script>
     <fb: login-button scope="public_profile, email" onlogin = "checkLoginState();">
     <fb: login-button>
     <div class = 'fb-login-button' data-max-rows = '1' data-size = 'medium' data-show-faces = "false" data-auto-logout-link="false"></div>
-    <div id = "login"></div>
+    <div id = "login"></div> -->
 
 
     <script type="text/javascript">
@@ -32,12 +33,14 @@
     //  string by which we'll identify the image later in our code.
     //  The second parameter is the URL of the image (relative)
             game.load.image('logo', 'phaser.png');
+            game.load.spritesheet('tri', 'shape.png', 84, 85);
+            game.load.spritesheet('dude', 'dude.png', 33, 48);
         }
         function create() {
     //  This creates a simple sprite that is using our loaded image and
     //  displays it on-screen
     //  and assign it to a variable
-        var image = game.add.sprite(0, 0, 'logo');
+        var image = game.add.sprite(0, 0, 'tri');
             game.physics.enable(image, Phaser.Physics.ARCADE);
             image.body.velocity.x=150;
         }
