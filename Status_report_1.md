@@ -8,3 +8,5 @@ Created by Siming
 
 3) We are going to figure out the problems in 2 and try to finish the game in the next week and before Nov. 31.
 
+#Comments By Ming
+* Looking good.  Remember, don't aim for perfection.  That's not the goal of the semester project.  Better to do less than to do a lot and then a lot do not work well.
