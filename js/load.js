@@ -1,7 +1,7 @@
 var loadState = {
 
 	preload: function(){
-		game.load.spritesheet('tri', 'shape.png', 84, 85);
+		game.load.spritesheet('tri', 'assets/shape.png', 84, 85);
 	},
 
 	create: function(){
