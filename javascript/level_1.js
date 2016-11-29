@@ -6,9 +6,9 @@ var level_1State = {
 		this.bgSound = game.add.audio('music');
 
 		//command picture
-		this.cm = game.add.sprite(100, 100 ,'command');
+		this.cm = game.add.sprite(10, 500 ,'command');
 		//what does this mean
-		this.cm.anchor.setTo ('10', '90');
+		//this.cm.anchor.setTo ('10', '90');
 
 		//play music
 		this.bgSound.play();
@@ -29,7 +29,7 @@ var level_1State = {
 
 		this.heartsGroup = game.add.group();
 
-		this.win = false;	
+		this.win = true;	
 		this.scoreBoardGroup = game.add.group();
 
 		//creating the three hearts in the group and render on the screen
@@ -87,6 +87,7 @@ var level_1State = {
 				shape = this.shapesGroup.create(game.world.randomX, 560, 'badtriangle');
 				shape = this.shapesGroup.create(game.world.randomX, 560, 'polygon');
 				shape.scale.setTo(0.95, 0.95);
+				game.world.bringToTop(this.cm);
 			}
 		}
 		timeRemaining --;
@@ -137,7 +138,7 @@ var level_1State = {
 
 
 		//add the win when time goes out here
-
+		//call game over here directly
 		if (this.lifes == 0){
 			this.win = false;
 			this.gameOver();

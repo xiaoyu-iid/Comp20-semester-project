@@ -10,7 +10,7 @@ var loadState = {
 
 		game.load.image('scoreboard', 'pictures/losescoreboard.png');
 		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
-		game.load.image('command', 'pictures/command.png');
+		game.load.image('command', 'pictures/command_line.png');
 
 		game.load.audio('music', 'music/background.mp3');
 		game.load.audio('explode', 'music/button-click.mp3');
