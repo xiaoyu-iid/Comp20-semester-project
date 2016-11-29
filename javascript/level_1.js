@@ -58,6 +58,7 @@ var level_1State = {
 
 		//call the moveShapes function to move each shape
 		this.shapesGroup.forEach(this.moveShapes, this);
+		timeRemainingText.setText("Time remaining: " + timeRemaining + "s");
 
 	},
 
@@ -74,6 +75,7 @@ var level_1State = {
 				shape = this.shapesGroup.create(game.world.randomX, 480, 'polygon');
 			}
 		}
+		timeRemaining --;
 
 	},
 
