@@ -12,7 +12,8 @@ var loadState = {
 		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
 		game.load.image('command', 'pictures/command.png');
 
-		//need to add music
+		game.load.audio('music', 'music/background.mp3');
+		game.load.audio('explode', 'music/button-click.mp3');
 
 	},
 

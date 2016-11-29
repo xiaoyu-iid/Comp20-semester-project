@@ -1,19 +1,23 @@
 var level_1State = {
 
 	create: function(){
-		this.bg = game.add.sprite(0,0, 'sky');
+		//this.bg = game.add.sprite(0,0, 'sky');
 
-		//need to add a background music
+		this.bgSound = game.add.audio('music');
 
 		//command picture
 		this.cm = game.add.sprite(100, 100 ,'command');
 		//what does this mean
-		this.cm.anchor.setTo (0.5, 0.5);
+		this.cm.anchor.setTo ('10', '90');
 
+		//play music
+		this.bgSound.play();
+		this.bgSound.loop = true;
 
 		this.lifes = 3;
 		this.counterKill = 0;
 
+		//the spped of the shapes when generating
 		this.minSpeed = -1;
 		this.maxSpeed = 2;
 		this.vx = Math.random()*(this.maxSpeed - this.minSpeed+1) - this.minSpeed;
@@ -28,17 +32,19 @@ var level_1State = {
 		this.win = false;	
 		this.scoreBoardGroup = game.add.group();
 
-
+		//creating the three hearts in the group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
-			this.hearts = this.heartsGroup.create(game.world.width / 2 + 220 +(i * 20), 30, "heart");
+			this.hearts = this.heartsGroup.create(game.world.width / 2 + 300 +(i * 50), 25, "heart");
+			this.hearts.scale.setTo(0.2, 0.2);
 
 		}
 
+		//timer
 		game.time.events.add(15000, this.gameOver, this);
 		timeRemaining = 15;
-		timeRemainingText = game.add.text(40, 20, 'Time remaining:' + "15s", {
+		timeRemainingText = game.add.text(30, 60, 'Time remaining:' + "15s", {
 			font: "15px Arial",
-        	fill: "#ff0044",
+        	fill: "#ffffff",
         	align: "left"	
 		});
 		
@@ -46,11 +52,12 @@ var level_1State = {
 		game.time.events.loop(1000, this.createShapes, this);
 
 		//can change the style of characters later
-		this.scorelabel = game.add.text(30,30,'Numbers: 0', {front : '18px Arial', fill: '#ffffff'});
+		this.scorelabel = game.add.text(30,25,'Numbers: 0', {front : '10px Arial', fill: '#ffffff'});
 
-		this.lifelabel = game.add.text(game.world.width / 2 + 150, 25, 'Your Life: ',{front : '18px Arial', fill: '#ffffff'});
+		this.lifelabel = game.add.text(game.world.width / 2 + 150, 25, 'Your Life: ',{front : '10px Arial', fill: '#ffffff'});
 
 		//need to add the expload sound
+		this.explodeSound = game.add.audio('explode');
 
 	},
 
@@ -58,6 +65,7 @@ var level_1State = {
 
 		//call the moveShapes function to move each shape
 		this.shapesGroup.forEach(this.moveShapes, this);
+		//update the timer 
 		timeRemainingText.setText("Time remaining: " + timeRemaining + "s");
 
 	},
@@ -68,11 +76,14 @@ var level_1State = {
 
 		var shape;
 
+		//how to deal with overlapping
 		for (var i = 0 ; i < totalAmount; i++){
 			if (i % 2 == 0){
-				shape = this.shapesGroup.create(game.world.randomX, 480, 'triangle');
-				shape = this.shapesGroup.create(game.world.randomX, 480, 'badtriangle');
-				shape = this.shapesGroup.create(game.world.randomX, 480, 'polygon');
+				shape = this.shapesGroup.create(game.world.randomX, 560 , 'triangle');
+				shape.scale.setTo(0.6, 0.6);
+				shape = this.shapesGroup.create(game.world.randomX, 560, 'badtriangle');
+				shape = this.shapesGroup.create(game.world.randomX, 560, 'polygon');
+				shape.scale.setTo(0.95, 0.95);
 			}
 		}
 		timeRemaining --;
@@ -106,6 +117,7 @@ var level_1State = {
 		//console.log(sprite.key);
 
 		//add the explode sound to play here
+		this.explodeSound.play();
 
 		if(!sprite.alive){
 			return;
