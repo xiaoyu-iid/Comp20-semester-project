@@ -34,7 +34,14 @@ var level_1State = {
 
 		}
 
-
+		game.time.events.add(15000, this.gameOver, this);
+		timeRemaining = 15;
+		timeRemainingText = game.add.text(40, 20, 'Time remaining:' + "15s", {
+			font: "15px Arial",
+        	fill: "#ff0044",
+        	align: "left"	
+		});
+		
 		//call the function createShapes to create the shapes
 		game.time.events.loop(1000, this.createShapes, this);
 
