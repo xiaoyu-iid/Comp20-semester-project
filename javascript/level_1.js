@@ -1,4 +1,4 @@
-var level_1State = (){
+var level_1State = {
 
 	create: function(){
 		this.bg = game.add.sprite(0,0, 'sky');
@@ -6,7 +6,7 @@ var level_1State = (){
 		//need to add a background music
 
 		//command picture
-		this.cm = game.add.sprite(, ,'command');
+		this.cm = game.add.sprite(100, 100 ,'command');
 		//what does this mean
 		this.cm.anchor.setTo (0.5, 0.5);
 

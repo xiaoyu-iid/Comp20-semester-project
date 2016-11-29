@@ -4,11 +4,11 @@ var loadState = {
 		game.load.image('heart', 'pictures/heart.png');
 		game.load.image('sky', 'pictures/background.png');
 		game.load.image('triangle', 'pictures/triangle.png');
-		game.load.iamge('badtriangle', 'pictures/triangle-yellow-b.png');
+		game.load.image('badtriangle', 'pictures/triangle-yellow-b.png');
 		game.load.image('polygon', 'pictures/polygon-blue.png');
 		game.load.image('reload', 'pictures/reload.png');
 
-		game.load.image('scoreboard', 'pictures/losecoreboard.png');
+		game.load.image('scoreboard', 'pictures/losescoreboard.png');
 		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
 		game.load.image('command', 'pictures/command.png');
 
