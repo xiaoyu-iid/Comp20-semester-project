@@ -1,16 +1,18 @@
 var loadState = {
 
 	preload: function(){
-		game.load.image('heart', 'assets/heart.png');
-		game.load.image('sky', 'assets/background.png');
-		game.load.image('triangle', 'assets/triangle.png');
-		game.load.iamge('badtriangle', 'assets/triangle-yellow-b.png');
-		game.load.image('polygon', 'assets/polygon-blue.png');
-		game.load.image('reload', 'assets/reload.png');
-		
-		game.load.image('scoreboard', 'assets/losecoreboard.png');
-		game.load.image('scoreboardwin', 'assets/winscoreboard.png');
-		game.load.image('command', 'assets/command.png');
+		game.load.image('heart', 'pictures/heart.png');
+		game.load.image('sky', 'pictures/background.png');
+		game.load.image('triangle', 'pictures/triangle.png');
+		game.load.iamge('badtriangle', 'pictures/triangle-yellow-b.png');
+		game.load.image('polygon', 'pictures/polygon-blue.png');
+		game.load.image('reload', 'pictures/reload.png');
+
+		game.load.image('scoreboard', 'pictures/losecoreboard.png');
+		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
+		game.load.image('command', 'pictures/command.png');
+
+		//need to add music
 
 	},
 
