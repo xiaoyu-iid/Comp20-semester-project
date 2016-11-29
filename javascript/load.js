@@ -14,6 +14,8 @@ var loadState = {
 
 		game.load.audio('music', 'music/background.mp3');
 		game.load.audio('explode', 'music/button-click.mp3');
+		game.load.audio('win', 'music/win.mp3');
+		game.load.audio('lose', 'music/lose.mp3');
 
 	},
 

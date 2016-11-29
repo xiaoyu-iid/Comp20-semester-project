@@ -43,7 +43,7 @@ var level_1State = {
 		game.time.events.add(15000, this.gameOver, this);
 		timeRemaining = 15;
 		timeRemainingText = game.add.text(30, 60, 'Time remaining:' + "15s", {
-			font: "15px Arial",
+			font: "20px Arial",
         	fill: "#ffffff",
         	align: "left"	
 		});
@@ -58,6 +58,9 @@ var level_1State = {
 
 		//need to add the expload sound
 		this.explodeSound = game.add.audio('explode');
+
+		this.winSound = game.add.audio('win');
+		this.loseSound = game.add.audio('lose');
 
 	},
 
@@ -125,7 +128,7 @@ var level_1State = {
 
 		sprite.kill();
 
-		if(sprite.key == 'shape'){
+		if(sprite.key == 'triangle'){
 			this.counterKill++;
 		}else {
 			this.lifes--;
@@ -136,28 +139,30 @@ var level_1State = {
 		//add the win when time goes out here
 
 		if (this.lifes == 0){
-			this.killPlayer();
 			this.win = false;
+			this.gameOver();
 			this.messageGameOver = "You loose!"
 
-			this.scorelabel.text = "Numbers of Shapes found out: " + this.counterKill;
+			
 		}
-
+	this.scorelabel.text = "Numbers: " + this.counterKill;
 
 	},
 
-	killPlayer: function(){
+//these two functions about players are not necessary 
+	//killPlayer: function(){
 
 		
 
-	},
+//	},
 
-	freePlayer: function(){
+	//freePlayer: function(){
 
-	},
+//	},
 
 
 	showScoreBoardDead: function(){
+
 
 	},
 
@@ -167,9 +172,29 @@ var level_1State = {
 
 	gameOver: function(){
 
+		if(this.win){
+			this.bgSound.stop();
+			this.explodeSound.stop();
+			this.winSound.play();
+			this.winSound.loop = false;
+			game.time.events.stop();
+			this.showScorewin();
+
+		}else{
+			this.bgSound.stop();
+			this.explodeSound.stop();
+			this.loseSound.play();
+			this.loseSound.loop = false;
+			game.time.events.stop();
+			this.showScoreBoardDead();
+		}
+
 	},
 
 	restartGame: function(){
+
+		game.time.events.start();
+		game.state.start('level_1');
 		
 	}
 
