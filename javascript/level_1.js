@@ -160,18 +160,6 @@ var level_1State = {
 
 	},
 
-//these two functions about players are not necessary 
-	//killPlayer: function(){
-
-		
-
-//	},
-
-	//freePlayer: function(){
-
-//	},
-
-
 	showScoreBoardLose: function(){
 		this.gameOverLabel = game.add.text(game.world.width / 2,120, this.messageGameOver, {font : '50px Arial',
 																							fill: '#ffffff'});
