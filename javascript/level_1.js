@@ -102,7 +102,7 @@ var level_1State = {
 
 	moveShapes: function(shape){
 
-		var that = this;
+		//var that = this;
 
 		shape.inputEnabled = true;
 		shape.checkWorldBounds = true;
@@ -139,6 +139,7 @@ var level_1State = {
 			this.counterKill++;
 		} else {
 			this.lifes--;
+			console.log(this.lifes);
 			this.heartsGroup.children[this.lifes].kill();
 		}
 
@@ -146,12 +147,14 @@ var level_1State = {
 		//add the win when time goes out here
 		//call game over here directly
 		if (this.lifes == 0){
+			//shape.inputEnabled = false;
+			console.log("lose status");
 			this.win = false;
 			this.messageGameOver = "You lose!"
 			this.gameOver();
-
-			
+	
 		}
+
 	this.scorelabel.text = "Numbers: " + this.counterKill;
 
 	},
@@ -203,10 +206,42 @@ var level_1State = {
 	},
 
 	showScoreWin: function(){
+		timeRemainingText.setText("Time remaining: " + "0s");
+
+		this.gameOverLabel = game.add.text(game.world.width / 2,120, this.messageGameOver, {font : '50px Arial',
+																							fill: '#ff0000'});
+		this.gameOverLabel.anchor.setTo(0.5, 0.5);
+
+		this.lifeFinalScore = game.add.text(game.world.width / 2  - 110, 220,'Life Remaining: ', {font : '30px Arial',
+																								  fill: '#000000'});
+		this.finalScore = game.add.text(game.world.width / 2 - 110, 280, 'Triangles: ', {font : '30px Arial',
+																				   		 fill: '#000000'})
+
+		this.scoreBoardGroup.create(game.world.width / 2 - 225 , 150, "scoreboard");
+
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height / 2 + 75, "reload");
+		this.buttonReload.scale.setTo(0.1, 0.1)
+		this.buttonReload.inputEnabled = true;
+		
+
+		this.buttonReload.events.onInputDown.add(this.restartGame, this);
+		this.scoreBoardGroup.add(this.buttonReload);
+
+		this.scoreBoardGroup.add(this.lifeFinalScore);
+		this.scoreBoardGroup.add(this.finalScore);
+		this.scoreBoardGroup.add(this.gameOverLabel);
+
+		game.world.bringToTop(this.finalScore);
+		game.world.bringToTop(this.lifeFinalScore);
+
+		this.lifeFinalScore.text = "Life Remaining: " + this.lifes;
+		this.finalScore.text = "Triangles: " + this.counterKill;
+
+		game.add.tween(this.scoreBoardGroup).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 
 	},
 
-	gameOver: function(){
+	gameOver: function(shape){
 
 		if (this.win){
 			this.bgSound.stop();
@@ -214,7 +249,7 @@ var level_1State = {
 			this.winSound.play();
 			this.winSound.loop = false;
 			game.time.events.stop();
-			this.showScorewin();
+			this.showScoreWin();
 
 		} else {
 			this.bgSound.stop();
