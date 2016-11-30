@@ -134,21 +134,22 @@ var level_1State = {
 		}
 
 		sprite.kill();
-
 		if(sprite.key == 'triangle'){
 			this.counterKill++;
 		} else {
-			this.lifes--;
-			console.log(this.lifes);
-			this.heartsGroup.children[this.lifes].kill();
+			if (this.lifes > 0) {
+				this.lifes--;
+				//console.log(this.lifes);
+				this.heartsGroup.children[this.lifes].kill();
+		    }
 		}
 
 
 		//add the win when time goes out here
 		//call game over here directly
-		if (this.lifes == 0){
+		if (this.lifes <= 0){
 			//shape.inputEnabled = false;
-			console.log("lose status");
+			//console.log("lose status");
 			this.win = false;
 			this.messageGameOver = "You lose!"
 			this.gameOver();
@@ -259,6 +260,12 @@ var level_1State = {
 			game.time.events.stop();
 			this.showScoreBoardLose();
 		}
+
+		// the key value should later be updated as individual usernames
+		// JQuery should be used here
+		// the key-value pair should be sent to server after each game
+		localStorage.setItem("Score", this.counterKill);
+		//console.log(this.counterKill);
 
 	},
 
