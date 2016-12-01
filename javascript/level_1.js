@@ -7,7 +7,6 @@ var level_1State = {
 
 		//command picture
 		this.cm = game.add.sprite(10, 500 , 'command');
-		//what does this mean
 		//this.cm.anchor.setTo ('10', '90');
 
 		//play music
@@ -252,8 +251,29 @@ var level_1State = {
 		// the key value should later be updated as individual usernames
 		// JQuery should be used here
 		// the key-value pair should be sent to server after each game
-		localStorage.setItem("Score", this.counterKill);
+		if (navigator.geolocation) {
+       		navigator.geolocation.getCurrentPosition(function(position){
+       			this.lat = position.coords.latitude;
+       			this.lon = position.coords.longitude;
+       		});
+    	} else {
+        	alert("Geolocation is not supported by this browser.");
+    	}
+
+		var info_package = {
+			"username": "user",
+			"score": this.counterKill,
+			"latitude": this.lat,
+			"longitude": this.lon
+		}
+		//localStorage.setItem("Score", this.counterKill);
 		//console.log(this.counterKill);
+		$.ajax ({
+       		type: "POST",
+       		url: "https://immense-plateau-64166.herokuapp.com/submit.json", 
+       		data: info_package,
+        	success: null
+      	}); 
 
 	},
 
