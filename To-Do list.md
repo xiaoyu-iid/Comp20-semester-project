@@ -2,8 +2,7 @@ To-Do list :
 
 Front end:
 	1. win/lose status
-	2. Geolocation
-	3. google / facebook login
+	3. google / facebook login (optional)
 	4. game mobile adaptable
 	
 Back end: 
