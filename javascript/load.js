@@ -39,17 +39,21 @@ var loadState = {
 			game.state.start('level_1');
 
 		} else {
-			//game.scale.setScreenSize(true)
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			
-			game.scale.minWidth = 1000;
-			game.scale.minHeight = 680;
-			game.scale.maxWidth = 2000;
-			game.scale.maxHeight = 1360;
-		
+			//game.scale.minWidth = 1000;
+			//game.scale.minHeight = 680;
+			//game.scale.maxWidth = 2000;
+			//game.scale.maxHeight = 1360;
+			
+			//var game = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.CANVAS, 'game')
+			game.scale.refresh();
+			
    			game.scale.pageAlignHorizontally = true;
-    			game.scale.pageAlignVertically = true;
+    		game.scale.pageAlignVertically = true;
+
+    		
 			game.state.start('level_1');
 		}
 
