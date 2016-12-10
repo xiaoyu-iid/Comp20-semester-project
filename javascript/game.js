@@ -1,4 +1,4 @@
-var game =  new Phaser.Game('98', '98', Phaser.AUTO);
+var game =  new Phaser.Game('100', '100', Phaser.AUTO);
 
 game.global = {
     score : 0

@@ -74,4 +74,11 @@ function statusChangeCallback(response) {
       localStorage.setItem('current_user', response.name);
 
     });
+
+   // FB.logout(function(response){
+
+    //	console.log("Person is now logged out");
+
+    //	localStorage.setItem('current_user', '');
+    //});
   }

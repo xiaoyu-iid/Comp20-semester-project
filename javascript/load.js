@@ -36,15 +36,21 @@ var loadState = {
 
 			game.scale.setScreenSize(true)
 
+
+
 		} else {
 			//game.scale.setScreenSize(true)
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
    			game.scale.pageAlignHorizontally = true;
     		game.scale.pageAlignVertically = true;
+
+
+    		game.state.start('level_1');
 		}
 
+
 	
-	game.state.start('level_1');
+	
 
 	}
 	

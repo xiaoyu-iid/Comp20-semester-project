@@ -276,6 +276,8 @@ var level_1State = {
         	success: null
       	}); 
 
+ 	
+
 	},
 
 	restartGame: function(){
