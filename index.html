@@ -19,17 +19,21 @@
     </head>
     <body>
 
-   	<!-- testing facebook login 
-   	      not working yet because we need permission from facebook linked to our web 
-    <script lang= "javascript" src = "facebooklogin.js"></script>
-    <fb: login-button scope="public_profile, email" onlogin = "checkLoginState();">
-    <fb: login-button>
-    <div class = 'fb-login-button' data-max-rows = '1' data-size = 'medium' data-show-faces = "false" data-auto-logout-link="false"></div>
-    <div id = "login"></div> -->
+    <!-- facebook login api key -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1802227390037906";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 
     <!-- needs to push the game online so that we can access the game online -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.4.2/phaser.min.js"></script>
+
+    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 
     <script src="/javascript/boot.js"></script>
     <script src="/javascript/load.js"></script>
