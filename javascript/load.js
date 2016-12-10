@@ -35,6 +35,8 @@ var loadState = {
 			game.scale.pageAlignVertically = true;
 
 			game.scale.setScreenSize(true)
+		
+			game.state.start('level_1');
 
 		} else {
 			//game.scale.setScreenSize(true)
