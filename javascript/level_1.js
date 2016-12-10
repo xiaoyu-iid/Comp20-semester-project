@@ -260,8 +260,9 @@ var level_1State = {
         	alert("Geolocation is not supported by this browser.");
     	}
 
+    	user = localStorage.getItem("current_user");
 		var info_package = {
-			"username": "user",
+			"username": user,
 			"score": this.counterKill,
 			"latitude": this.lat,
 			"longitude": this.lon
