@@ -12,3 +12,5 @@ The game center page would render a local score ranking board based on the curre
 
 3) We successfully rendered the score board page using pug on the server side. 
 This week we'll start using Bootstrap to make the game center page look better. 
+
+4) We also successfully implemented the facebook login on our game page.

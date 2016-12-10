@@ -6,7 +6,7 @@ var level_1State = {
 		this.bgSound = game.add.audio('music');
 
 		//command picture
-		this.cm = game.add.sprite(10, 500 , 'command');
+		this.cm = game.add.sprite(2, 500, 'command');
 		//this.cm.anchor.setTo ('10', '90');
 
 		//play music
