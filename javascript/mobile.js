@@ -6,6 +6,8 @@ var mobileState = {
 		//game.stage.backgroundColor = "#0000FF";
 		this.hello = game.add.sprite(100, 100, 'heart');
 
+	}
+
 /*
 		this.bgSound = game.add.audio('music');
 
