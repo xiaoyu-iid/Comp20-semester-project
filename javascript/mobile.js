@@ -233,7 +233,7 @@ var mobileState = {
 
 		this.finalScore.scale.setTo(window.innerWidth / 600, window.innerWidth / 600);
 
-		this.scoreBoardGroup.create((game.world.width / 2 - 225 / 600), window.innerHeight * 0.34, "scoreboardwin");
+		this.scoreBoardGroup.create((game.world.width / 2 - 225 * game.world.width / 600), window.innerHeight * 0.4, "scoreboardwin");
 		//console.log("gameworld" + game.world.width);
 		//console.log("gameworld" + game.world.width/2);
 		//console.log("gameworld" + (game.world.width/2 - 225 ));
@@ -248,7 +248,7 @@ var mobileState = {
 
 
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height * 0.6, "reload");
-		this.buttonReload.scale.setTo(window.innerWidth / 10800, window.innerWidth / 10800)
+		this.buttonReload.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080)
 		this.buttonReload.inputEnabled = true;
 		
 
