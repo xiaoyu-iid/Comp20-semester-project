@@ -1,4 +1,4 @@
-var level_1_mobileState = {
+var mobileState = {
 
 	create: function(){
 		//this.bg = game.add.sprite(0,0, 'sky');

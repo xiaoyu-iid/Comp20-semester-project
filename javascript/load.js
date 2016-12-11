@@ -36,7 +36,7 @@ var loadState = {
 
 			//game.scale.setScreenSize(true)
 		
-			game.state.start('level_1_mobile');
+			game.state.start('mobile');
 
 		} else {
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
