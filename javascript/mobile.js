@@ -12,7 +12,7 @@ var mobileState = {
 
 		//command picture
 		this.cm = game.add.sprite(window.innerWidth * 0.05, window.innerHeight * 0.75, 'command');
-		this.cm.scale.setTo(window.innerWidth / 550, window.innerWidth / 550);
+		this.cm.scale.setTo(window.innerWidth / 640, window.innerWidth / 640);
 		//this.cm.anchor.setTo ('10', '90');
 
 		//play music
@@ -42,16 +42,16 @@ var mobileState = {
 		this.scorelabel = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.05,'Numbers: 0', {front : "10px Arial",
 															 fill: "#ffffff"
 															});
-		this.scorelabel.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
+		this.scorelabel.scale.setTo(window.innerWidth / 480, window.innerWidth / 480);
 
 		this.lifelabel = game.add.text(window.innerWidth * 0.6, window.innerHeight * 0.05, 'Your Lifes: ',{front : '10px Arial',
 																					  fill: '#ffffff'});
-		this.lifelabel.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
+		this.lifelabel.scale.setTo(window.innerWidth / 480, window.innerWidth / 480);
 
 		//creating the three hearts in thce group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
-			this.hearts = this.heartsGroup.create(window.innerWidth * 0.75 + (i * window.innerWidth / 1280 * 65), window.innerHeight * 0.05, "heart");
-			this.hearts.scale.setTo(window.innerWidth / 1280 * 0.3, window.innerWidth / 1280 * 0.3);
+			this.hearts = this.heartsGroup.create(window.innerWidth * 0.75 + (i * window.innerWidth / 640 * 65), window.innerHeight * 0.05, "heart");
+			this.hearts.scale.setTo(window.innerWidth / 640 * 0.3, window.innerWidth / 640 * 0.3);
 		}
 
 		//timer
@@ -63,7 +63,7 @@ var mobileState = {
         	align: "left"	
 		});
 
-		timeRemainingText.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
+		timeRemainingText.scale.setTo(window.innerWidth / 480, window.innerWidth / 480);
 		
 		//call the function createShapes to create the shapes
 		game.time.events.loop(1000, this.createShapes, this);
