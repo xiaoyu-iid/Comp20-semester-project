@@ -35,11 +35,18 @@ var loadState = {
 			game.scale.pageAlignHorizontally = true;
 			game.scale.pageAlignVertically = true;
 
+<<<<<<< HEAD
 			game.add.text(150, 300, "Hello load is working", {front: '10 px Arial'}, fill: '#0000FF');
 
 			//game.scale.setScreenSize(true)
 			game.state.start('mobile');
 
+=======
+			//game.scale.setScreenSize(true);
+			console.log ("mobile");
+		
+			game.state.start('mobile');
+>>>>>>> 484a58a44fbe7f2a8d6d03f916692c3da32e837b
 
 		} else {
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -55,6 +62,7 @@ var loadState = {
 			
    			game.scale.pageAlignHorizontally = true;
     		game.scale.pageAlignVertically = true;
+
 
     		
 			game.state.start('level_1');
