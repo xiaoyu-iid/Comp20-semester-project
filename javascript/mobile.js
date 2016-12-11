@@ -50,7 +50,7 @@ var mobileState = {
 
 		//creating the three hearts in thce group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
-			this.hearts = this.heartsGroup.create(window.innerWidth * 0.28 + (i * window.innerWidth / 640 * 65), window.innerHeight * 0.11, "heart");
+			this.hearts = this.heartsGroup.create(window.innerWidth * 0.35 + (i * window.innerWidth / 640 * 65), window.innerHeight * 0.11, "heart");
 			this.hearts.scale.setTo(window.innerWidth / 640 * 0.3, window.innerWidth / 640 * 0.3);
 		}
 
