@@ -243,7 +243,7 @@ var level_1State = {
 
 
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height * 0.6, "reload");
-		this.buttonReload.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080)
+		this.buttonReload.scale.setTo('500' , '500');
 		this.buttonReload.inputEnabled = true;
 		
 
