@@ -215,7 +215,7 @@ var mobileState = {
 	showScoreWin: function(){
 		timeRemainingText.setText("Time remaining: " + "0s");
 
-		this.gameOverLabel = game.add.text(window.innerWidth * 0.32, window.innerHeight * 0.3, this.messageGameOver, {
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.3, window.innerHeight * 0.25, this.messageGameOver, {
 																							font : '50px Arial',
 																							fill: '#ff0000'
 																						});
