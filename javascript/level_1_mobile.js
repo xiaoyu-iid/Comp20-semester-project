@@ -3,6 +3,9 @@ var level_1_mobileState = {
 	create: function(){
 		//this.bg = game.add.sprite(0,0, 'sky');
 
+		this.hello = game.add.sprite(0, 0, 'heart');
+
+/*
 		this.bgSound = game.add.audio('music');
 
 		//command picture
@@ -323,6 +326,8 @@ var level_1_mobileState = {
 		game.state.start('level_1');
 		
 	}
+
+	*/
 
 	
 }
