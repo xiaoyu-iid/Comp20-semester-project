@@ -215,7 +215,7 @@ var mobileState = {
 	showScoreWin: function(){
 		timeRemainingText.setText("Time remaining: " + "0s");
 
-		this.gameOverLabel = game.add.text(window.innerWidth * 0.3, window.innerHeight * 0.25, this.messageGameOver, {
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.3, window.innerHeight * 0.2, this.messageGameOver, {
 																							font : '50px Arial',
 																							fill: '#ff0000'
 																						});
@@ -226,12 +226,12 @@ var mobileState = {
 																								  font : '30px Arial',
 																								  fill: '#000000'
 																								});
-		this.lifeFinalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+		this.lifeFinalScore.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
 
 		this.finalScore = game.add.text(window.innerWidth * 0.4, window.innerHeight * 0.395, 'Triangles: ', {font : '30px Arial',
 																				   		 	fill: '#000000'})
 
-		this.finalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+		this.finalScore.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
 
 		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboardwin");
 		//console.log("gameworld" + game.world.width);
