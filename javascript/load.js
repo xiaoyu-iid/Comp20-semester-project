@@ -24,7 +24,7 @@ var loadState = {
 	if(!game.device.desktop){
 			game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 
-			document.body.style.backgroundColor = '#0000FF';
+			document.body.style.backgroundColor = '#000000';
 
 			game.state.start('mobile');
 
