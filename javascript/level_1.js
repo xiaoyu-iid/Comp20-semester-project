@@ -43,7 +43,7 @@ var level_1State = {
 																					  fill: '#ffffff'});
 		this.lifelabel.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
 
-		//creating the three hearts in the group and render on the screen
+		//creating the three hearts in thce group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
 			this.hearts = this.heartsGroup.create(window.innerWidth * 0.75 + (i * window.innerWidth / 1280 * 65), window.innerHeight * 0.05, "heart");
 			this.hearts.scale.setTo(window.innerWidth / 1280 * 0.3, window.innerWidth / 1280 * 0.3);
@@ -94,6 +94,7 @@ var level_1State = {
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65 , 'triangle');
 				shape.scale.setTo(window.innerWidth / 960 * 0.56, window.innerWidth / 960 * 0.56);
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'badtriangle');
+				shape.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'polygon');
 				shape.scale.setTo(window.innerWidth / 960 * 0.86, window.innerWidth / 960 * 0.86);
 				game.world.bringToTop(this.cm);
