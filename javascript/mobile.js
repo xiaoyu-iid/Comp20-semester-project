@@ -12,7 +12,7 @@ var mobileState = {
 
 		//command picture
 		this.cm = game.add.sprite(window.innerWidth * 0.05, window.innerHeight * 0.75, 'command');
-		this.cm.scale.setTo(window.innerWidth / 640, window.innerWidth / 640);
+		this.cm.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
 		//this.cm.anchor.setTo ('10', '90');
 
 		//play music
@@ -46,7 +46,7 @@ var mobileState = {
 
 		this.lifelabel = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.11, 'Your Lives: ',{front : '10px Arial',
 																					  fill: '#ffffff'});
-		this.lifelabel.scale.setTo(window.innerWidth / 640, window.innerWidth / 640);
+		this.lifelabel.scale.setTo(window.innerWidth / 480, window.innerWidth / 480);
 
 		//creating the three hearts in thce group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
