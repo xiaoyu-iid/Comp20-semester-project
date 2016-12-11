@@ -294,26 +294,33 @@ var level_1State = {
        		navigator.geolocation.getCurrentPosition(function(position){
        			this.lat = position.coords.latitude;
        			this.lon = position.coords.longitude;
+
+
+       			user = localStorage.getItem("current_user");
+		
+				var info_package = {
+				"username": user,
+				"score": this.counterKill,
+				"latitude": this.lat,
+				"longitude": this.lon
+				}
+				
+				$.ajax ({
+       				type: "POST",
+       				url: "https://immense-plateau-64166.herokuapp.com/submit.json", 
+       				data: info_package,
+        			success: null
+      			}); 
+
        		});
+
+
+
     	} else {
         	alert("Geolocation is not supported by this browser.");
     	}
 
-    	user = localStorage.getItem("current_user");
-		var info_package = {
-			"username": user,
-			"score": this.counterKill,
-			"latitude": this.lat,
-			"longitude": this.lon
-		}
-		//localStorage.setItem("Score", this.counterKill);
-		//console.log(this.counterKill);
-		$.ajax ({
-       		type: "POST",
-       		url: "https://immense-plateau-64166.herokuapp.com/submit.json", 
-       		data: info_package,
-        	success: null
-      	}); 
+  
 
 	},
 
