@@ -3,9 +3,11 @@ var mobileState = {
 	create: function(){
 		//this.bg = game.add.sprite(0,0, 'sky');
 
-		//game.stage.backgroundColor = "#0000FF";
+		game.stage.backgroundColor = "#0000FF";
 		//this.hello = game.add.sprite(0, 0, 'heart');
 
+	}
+/*
 
 		this.bgSound = game.add.audio('music');
 
@@ -327,6 +329,6 @@ var mobileState = {
 		game.state.start('level_1');
 		
 	}
-
+*/
 	
 }
