@@ -39,7 +39,7 @@ var loadState = {
 			//game.add.text(150, 300, "Hello load is working", {front: '10 px Arial'}, fill: '#0000FF');
 
 			//game.scale.setScreenSize(true)
-			game.state.start('level_1');
+			game.state.start('mobile');
 
 			//game.scale.setScreenSize(true);
 			//console.log ("mobile")
