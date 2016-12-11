@@ -233,7 +233,7 @@ var mobileState = {
 
 		this.finalScore.scale.setTo(window.innerWidth / 600, window.innerWidth / 600);
 
-		this.scoreBoardGroup.create((game.world.width / 2 - 225 * game.world.width / 600), window.innerHeight * 0.4, "scoreboardwin");
+		this.scoreBoardGroup.create((game.world.width / 2 - 225 * game.world.width / 640), window.innerHeight * 0.4, "scoreboardwin");
 		//console.log("gameworld" + game.world.width);
 		//console.log("gameworld" + game.world.width/2);
 		//console.log("gameworld" + (game.world.width/2 - 225 ));
@@ -242,7 +242,7 @@ var mobileState = {
 		//console.log("window" + (game.world.width / 2 - (225 * (game.world.width / 1144))));
 		//console.log ("should be" + (game.world.width / 2 - 225));
 
-		this.scoreBoardGroup.scale.setTo(game.world.width / 600, game.world.width / 600);
+		this.scoreBoardGroup.scale.setTo(game.world.width / 640, game.world.width / 640);
 		//this.scoreBoardGroup.position.x = (game.world.width / 2 - (450 * (game.world.width / 1144)));
 		//console.log (this.scoreBoardGroup.position.x);
 
