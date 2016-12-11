@@ -7,6 +7,7 @@ var loadState = {
 		game.load.image('badtriangle', 'pictures/triangle-yellow-b.png');
 		game.load.image('polygon', 'pictures/polygon-blue.png');
 		game.load.image('reload', 'pictures/reload.png');
+		game.load.image('leaderboard', 'pictures/leader_button.png');
 
 		game.load.image('scoreboard', 'pictures/losescoreboard.png');
 		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
