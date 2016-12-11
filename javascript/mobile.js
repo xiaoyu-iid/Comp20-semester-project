@@ -46,7 +46,7 @@ var mobileState = {
 
 		this.lifelabel = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.11, 'Your Lives: ',{front : '10px Arial',
 																					  fill: '#ffffff'});
-		this.lifelabel.scale.setTo(window.innerWidth / 550, window.innerWidth / 550);
+		this.lifelabel.scale.setTo(window.innerWidth / 640, window.innerWidth / 640);
 
 		//creating the three hearts in thce group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
