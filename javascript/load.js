@@ -34,9 +34,10 @@ var loadState = {
 			game.scale.pageAlignHorizontally = true;
 			game.scale.pageAlignVertically = true;
 
-			game.scale.setScreenSize(true)
+			//game.scale.setScreenSize(true);
+			console.log ("mobile");
 		
-			game.state.start('level_1_mobile');
+			game.state.start('mobile');
 
 		} else {
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -52,6 +53,7 @@ var loadState = {
 			
    			game.scale.pageAlignHorizontally = true;
     		game.scale.pageAlignVertically = true;
+
 
     		
 			game.state.start('level_1');

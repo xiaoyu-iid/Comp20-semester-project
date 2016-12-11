@@ -1,7 +1,8 @@
-var level_1State = {
+var mobileState = {
 
 	create: function(){
 		//this.bg = game.add.sprite(0,0, 'sky');
+		console.log("MMMMMMMMMMMOOOOOBILE");
 
 		this.bgSound = game.add.audio('music');
 
@@ -322,7 +323,4 @@ var level_1State = {
 		game.state.start('level_1');
 		
 	}
-
-	
-}
 }
