@@ -26,6 +26,8 @@ var loadState = {
 
 			document.body.style.backgroundColor = '#000000';
 
+			game.state.start('mobile');
+
 			game.scale.minWidth = 250;
 			game.scale.minHeight = 170;
 			game.scale.maxWidth = 1000;
@@ -36,7 +38,6 @@ var loadState = {
 
 			//game.scale.setScreenSize(true)
 		
-			game.state.start('mobile');
 
 		} else {
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
