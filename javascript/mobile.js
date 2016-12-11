@@ -55,7 +55,7 @@ var mobileState = {
 		}
 
 		//timer
-		game.time.events.add(30000, this.gameOver, this);
+		game.time.events.add(300, this.gameOver, this);
 		timeRemaining = 30;
 		timeRemainingText = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.17, "Time remaining:" + "30s", {
 			font: "20px Arial",
@@ -89,7 +89,7 @@ var mobileState = {
 
 	createShapes: function(){
 
-		var totalAmount = Math.floor(Math.random() * 4);
+		var totalAmount = Math.floor(Math.random() * 3);
 
 		var shape;
 
@@ -119,7 +119,7 @@ var mobileState = {
 
 		//set the speed of balloon
 		var minSpeed = -(Math.floor(Math.random()));
-        var maxSpeed = Math.floor(Math.random() * 1.5);
+        var maxSpeed = Math.floor(Math.random() * 2);
         var vx = Math.random() * (maxSpeed - minSpeed + 1) - minSpeed;
         var vy = Math.random() * (maxSpeed - minSpeed + 1) - minSpeed;
 
@@ -170,11 +170,11 @@ var mobileState = {
 	},
 
 	showScoreBoardLose: function(){
-		this.gameOverLabel = game.add.text(window.innerWidth * 0.37, window.innerHeight * 0.12, this.messageGameOver, {
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.37, window.innerHeight * 0.32, this.messageGameOver, {
 																							font : '50px Arial',
 																							fill: '#ffffff'
 																						});
-		this.gameOverLabel.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+		this.gameOverLabel.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
 		//this.gameOverLabel.anchor.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
 
 		this.lifeFinalScore = game.add.text(window.innerWidth * 0.36, window.innerHeight * 0.29,'Life Remaining: ', {
