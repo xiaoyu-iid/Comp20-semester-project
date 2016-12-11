@@ -185,8 +185,8 @@ var level_1State = {
 
 		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboard");
 
-		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height * 0.6, "reload");
-		this.buttonReload.scale.setTo(window.innerWidth / 10800, window.innerWidth / 10800)
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 65, game.world.height * 0.55, "reload");
+		this.buttonReload.scale.setTo(0.5, 0.5);
 		this.buttonReload.inputEnabled = true;
 		
 
@@ -242,8 +242,8 @@ var level_1State = {
 		//console.log (this.scoreBoardGroup.position.x);
 
 
-		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height * 0.6, "reload");
-		this.buttonReload.scale.setTo('500' , '500');
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 65, game.world.height * 0.55, "reload");
+		this.buttonReload.scale.setTo(0.5, 0.5);
 		this.buttonReload.inputEnabled = true;
 		
 
