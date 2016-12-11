@@ -231,7 +231,7 @@ var mobileState = {
 		this.finalScore = game.add.text(window.innerWidth * 0.35, window.innerHeight * 0.425, 'Triangles: ', {font : '30px Arial',
 																				   		 	fill: '#000000'})
 
-		this.finalScore.scale.setTo(window.innerWidth / 600, window.innerWidth / 600);
+		this.finalScore.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
 
 		this.scoreBoardGroup.create((game.world.width / 2 - 225 * game.world.width / 640), window.innerHeight * 0.4, "scoreboardwin");
 		//console.log("gameworld" + game.world.width);
