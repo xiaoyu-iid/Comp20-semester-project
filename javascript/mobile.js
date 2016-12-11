@@ -222,13 +222,13 @@ var mobileState = {
 		this.gameOverLabel.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
 		//this.gameOverLabel.anchor.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
 
-		this.lifeFinalScore = game.add.text(window.innerWidth * 0.3, window.innerHeight * 0.29,'Life Remaining: ', {
+		this.lifeFinalScore = game.add.text(window.innerWidth * 0.29, window.innerHeight * 0.35,'Life Remaining: ', {
 																								  font : '30px Arial',
 																								  fill: '#000000'
 																								});
 		this.lifeFinalScore.scale.setTo(window.innerWidth / 600, window.innerWidth / 600);
 
-		this.finalScore = game.add.text(window.innerWidth * 0.35, window.innerHeight * 0.395, 'Triangles: ', {font : '30px Arial',
+		this.finalScore = game.add.text(window.innerWidth * 0.35, window.innerHeight * 0.425, 'Triangles: ', {font : '30px Arial',
 																				   		 	fill: '#000000'})
 
 		this.finalScore.scale.setTo(window.innerWidth / 600, window.innerWidth / 600);
