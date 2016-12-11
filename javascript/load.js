@@ -26,10 +26,10 @@ var loadState = {
 
 			document.body.style.backgroundColor = '#000000';
 
-			//game.scale.minWidth = 250;
-			//game.scale.minHeight = 170;
-			//game.scale.maxWidth = 1000;
-			//game.scale.maxHeight = 680;
+			game.scale.minWidth = 250;
+			game.scale.minHeight = 170;
+			game.scale.maxWidth = 1000;
+			game.scale.maxHeight = 680;
 
 			game.scale.pageAlignHorizontally = true;
 			game.scale.pageAlignVertically = true;
