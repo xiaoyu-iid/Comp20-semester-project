@@ -39,7 +39,7 @@ var level_1State = {
 															});
 		this.scorelabel.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
 
-		this.lifelabel = game.add.text(window.innerWidth * 0.6, window.innerHeight * 0.05, 'Your Lifes: ',{front : '10px Arial',
+		this.lifelabel = game.add.text(window.innerWidth * 0.6, window.innerHeight * 0.05, 'Your Lives: ',{front : '10px Arial',
 																					  fill: '#ffffff'});
 		this.lifelabel.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
 
