@@ -4,11 +4,8 @@ var mobileState = {
 		//this.bg = game.add.sprite(0,0, 'sky');
 
 		//game.stage.backgroundColor = "#0000FF";
-		this.hello = game.add.sprite(100, 100, 'heart');
+		//this.hello = game.add.sprite(100, 100, 'heart');
 
-	}
-
-/*
 		this.bgSound = game.add.audio('music');
 
 		//command picture
@@ -329,6 +326,5 @@ var mobileState = {
 		game.state.start('level_1');
 		
 	}
-*/
 	
 }
