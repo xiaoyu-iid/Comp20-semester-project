@@ -6,7 +6,8 @@ var level_1State = {
 		this.bgSound = game.add.audio('music');
 
 		//command picture
-		this.cm = game.add.sprite(10, 500 , 'command');
+		this.cm = game.add.sprite(window.innerWidth * 0.05, window.innerHeight * 0.75 , 'command');
+		this.cm.scale.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
 		//this.cm.anchor.setTo ('10', '90');
 
 		//play music
@@ -18,7 +19,7 @@ var level_1State = {
 
 		//the spped of the shapes when generating
 		this.minSpeed = -1;
-		this.maxSpeed = 2;
+		this.maxSpeed = 1.5;
 		this.vx = Math.random()*(this.maxSpeed - this.minSpeed + 1) - this.minSpeed;
 		this.vy = Math.random()*(this.maxSpeed - this.minSpeed + 1) - this.minSpeed;
 
@@ -29,32 +30,35 @@ var level_1State = {
 		this.heartsGroup = game.add.group();
 
 		this.win = true;	
-		this.messageGameOver = "You win!";
+		this.messageGameOver = "Time's up!";
 		this.scoreBoardGroup = game.add.group();
 
 		//can change the style of characters later
-		this.scorelabel = game.add.text(30,25,'Numbers: 0', {front : "10px Arial",
+		this.scorelabel = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.05,'Numbers: 0', {front : "10px Arial",
 															 fill: "#ffffff"
 															});
+		this.scorelabel.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
 
-		this.lifelabel = game.add.text(game.world.width / 2 + 275, 25, 'Your Lifes: ',{front : '10px Arial',
+		this.lifelabel = game.add.text(window.innerWidth * 0.6, window.innerHeight * 0.05, 'Your Lifes: ',{front : '10px Arial',
 																					  fill: '#ffffff'});
+		this.lifelabel.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
 
 		//creating the three hearts in the group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
-			this.hearts = this.heartsGroup.create(game.world.width / 2 + 420 + (i * 45), 25, "heart");
-			this.hearts.scale.setTo(0.2, 0.2);
-
+			this.hearts = this.heartsGroup.create(window.innerWidth * 0.75 + (i * window.innerWidth / 1280 * 65), window.innerHeight * 0.05, "heart");
+			this.hearts.scale.setTo(window.innerWidth / 1280 * 0.3, window.innerWidth / 1280 * 0.3);
 		}
 
 		//timer
 		game.time.events.add(30000, this.gameOver, this);
 		timeRemaining = 30;
-		timeRemainingText = game.add.text(30, 60, "Time remaining:" + "30s", {
+		timeRemainingText = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.11, "Time remaining:" + "30s", {
 			font: "20px Arial",
         	fill: "#ffffff",
         	align: "left"	
 		});
+
+		timeRemainingText.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
 		
 		//call the function createShapes to create the shapes
 		game.time.events.loop(1000, this.createShapes, this);
@@ -80,18 +84,18 @@ var level_1State = {
 
 	createShapes: function(){
 
-		var totalAmount = Math.floor(Math.random() * 10);
+		var totalAmount = Math.floor(Math.random() * 7);
 
 		var shape;
 
 		//how to deal with overlapping
 		for (var i = 0 ; i < totalAmount; i++){
 			if (i % 2 == 0){
-				shape = this.shapesGroup.create(game.world.randomX, 560 , 'triangle');
-				shape.scale.setTo(0.6, 0.6);
-				shape = this.shapesGroup.create(game.world.randomX, 560, 'badtriangle');
-				shape = this.shapesGroup.create(game.world.randomX, 560, 'polygon');
-				shape.scale.setTo(0.95, 0.95);
+				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65 , 'triangle');
+				shape.scale.setTo(window.innerWidth / 960 * 0.56, window.innerWidth / 960 * 0.56);
+				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'badtriangle');
+				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'polygon');
+				shape.scale.setTo(window.innerWidth / 960 * 0.86, window.innerWidth / 960 * 0.86);
 				game.world.bringToTop(this.cm);
 			}
 		}
@@ -160,28 +164,33 @@ var level_1State = {
 	},
 
 	showScoreBoardLose: function(){
-		this.gameOverLabel = game.add.text(game.world.width / 2,120, this.messageGameOver, {font : '50px Arial',
-																							fill: '#ffffff'});
-		this.gameOverLabel.anchor.setTo(0.5, 0.5);
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.37, window.innerHeight * 0.12, this.messageGameOver, {
+																							font : '50px Arial',
+																							fill: '#ffffff'
+																						});
+		this.gameOverLabel.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+		//this.gameOverLabel.anchor.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
 
-		this.lifeFinalScore = game.add.text(game.world.width / 2  - 110, 220,'Life Remaining: ', {font : '30px Arial',
-																								  fill: '#000000'});
-		this.finalScore = game.add.text(game.world.width / 2 - 110, 280, 'Triangles: ', {font : '30px Arial',
-																				   		 fill: '#000000'})
+		this.lifeFinalScore = game.add.text(window.innerWidth * 0.36, window.innerHeight * 0.29,'Life Remaining: ', {
+																								  font : '30px Arial',
+																								  fill: '#000000'
+																								});
+		this.lifeFinalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
 
-		this.scoreBoardGroup.create(game.world.width / 2 - 225 , 150, "scoreboard");
+		this.finalScore = game.add.text(window.innerWidth * 0.4, window.innerHeight * 0.395, 'Triangles: ', {font : '30px Arial',
+																				   		 	fill: '#000000'})
 
-		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height / 2 + 75, "reload");
-		this.buttonReload.scale.setTo(0.1, 0.1)
+		this.finalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+
+		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboard");
+
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height * 0.6, "reload");
+		this.buttonReload.scale.setTo(window.innerWidth / 10800, window.innerWidth / 10800)
 		this.buttonReload.inputEnabled = true;
 		
 
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
-		this.scoreBoardGroup.add(this.buttonReload);
 
-		this.scoreBoardGroup.add(this.lifeFinalScore);
-		this.scoreBoardGroup.add(this.finalScore);
-		this.scoreBoardGroup.add(this.gameOverLabel);
 
 		game.world.bringToTop(this.finalScore);
 		game.world.bringToTop(this.lifeFinalScore);
@@ -190,34 +199,59 @@ var level_1State = {
 		this.finalScore.text = "Triangles: " + this.counterKill;
 
 		game.add.tween(this.scoreBoardGroup).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.lifeFinalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 
 	},
 
 	showScoreWin: function(){
 		timeRemainingText.setText("Time remaining: " + "0s");
 
-		this.gameOverLabel = game.add.text(game.world.width / 2,120, this.messageGameOver, {font : '50px Arial',
-																							fill: '#ff0000'});
-		this.gameOverLabel.anchor.setTo(0.5, 0.5);
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.37, window.innerHeight * 0.12, this.messageGameOver, {
+																							font : '50px Arial',
+																							fill: '#ff0000'
+																						});
+		this.gameOverLabel.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+		//this.gameOverLabel.anchor.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
 
-		this.lifeFinalScore = game.add.text(game.world.width / 2  - 110, 220,'Life Remaining: ', {font : '30px Arial',
-																								  fill: '#000000'});
-		this.finalScore = game.add.text(game.world.width / 2 - 110, 280, 'Triangles: ', {font : '30px Arial',
-																				   		 fill: '#000000'})
+		this.lifeFinalScore = game.add.text(window.innerWidth * 0.36, window.innerHeight * 0.29,'Life Remaining: ', {
+																								  font : '30px Arial',
+																								  fill: '#000000'
+																								});
+		this.lifeFinalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
 
-		this.scoreBoardGroup.create(game.world.width / 2 - 225 , 150, "scoreboard");
+		this.finalScore = game.add.text(window.innerWidth * 0.4, window.innerHeight * 0.395, 'Triangles: ', {font : '30px Arial',
+																				   		 	fill: '#000000'})
 
-		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height / 2 + 75, "reload");
-		this.buttonReload.scale.setTo(0.1, 0.1)
+		this.finalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+
+		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboardwin");
+		//console.log("gameworld" + game.world.width);
+		//console.log("gameworld" + game.world.width/2);
+		//console.log("gameworld" + (game.world.width/2 - 225 ));
+		
+		//console.log(game.world.width / 1144);
+		//console.log("window" + (game.world.width / 2 - (225 * (game.world.width / 1144))));
+		//console.log ("should be" + (game.world.width / 2 - 225));
+
+		//this.scoreBoardGroup.scale.setTo(game.world.width / 1144, game.world.width / 1144);
+		//this.scoreBoardGroup.position.x = (game.world.width / 2 - (450 * (game.world.width / 1144)));
+		//console.log (this.scoreBoardGroup.position.x);
+
+
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height * 0.6, "reload");
+		this.buttonReload.scale.setTo(window.innerWidth / 10800, window.innerWidth / 10800)
 		this.buttonReload.inputEnabled = true;
 		
 
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
-		this.scoreBoardGroup.add(this.buttonReload);
+		//this.scoreBoardGroup.add(this.buttonReload);
 
-		this.scoreBoardGroup.add(this.lifeFinalScore);
-		this.scoreBoardGroup.add(this.finalScore);
-		this.scoreBoardGroup.add(this.gameOverLabel);
+		//this.scoreBoardGroup.add(this.lifeFinalScore);
+		//this.scoreBoardGroup.add(this.finalScore);
+		//this.scoreBoardGroup.add(this.gameOverLabel);
 
 		game.world.bringToTop(this.finalScore);
 		game.world.bringToTop(this.lifeFinalScore);
@@ -226,6 +260,10 @@ var level_1State = {
 		this.finalScore.text = "Triangles: " + this.counterKill;
 
 		game.add.tween(this.scoreBoardGroup).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.lifeFinalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 
 	},
 
@@ -276,8 +314,6 @@ var level_1State = {
         	success: null
       	}); 
 
- 	
-
 	},
 
 	restartGame: function(){
@@ -288,4 +324,5 @@ var level_1State = {
 	}
 
 	
+}
 }
