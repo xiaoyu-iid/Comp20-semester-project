@@ -215,11 +215,11 @@ var mobileState = {
 	showScoreWin: function(){
 		timeRemainingText.setText("Time remaining: " + "0s");
 
-		this.gameOverLabel = game.add.text(window.innerWidth * 0.37, window.innerHeight * 0.12, this.messageGameOver, {
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.57, window.innerHeight * 0.12, this.messageGameOver, {
 																							font : '50px Arial',
 																							fill: '#ff0000'
 																						});
-		this.gameOverLabel.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+		this.gameOverLabel.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
 		//this.gameOverLabel.anchor.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
 
 		this.lifeFinalScore = game.add.text(window.innerWidth * 0.36, window.innerHeight * 0.29,'Life Remaining: ', {
