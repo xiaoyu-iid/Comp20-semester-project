@@ -247,7 +247,7 @@ var mobileState = {
 		//console.log (this.scoreBoardGroup.position.x);
 
 
-		this.buttonReload = game.add.sprite(game.world.width / 2 - 15 * window.innerWidth / 720, game.world.height * 0.525, "reload");
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 131 * window.innerWidth / 720, game.world.height * 0.525, "reload");
 		this.buttonReload.scale.setTo(window.innerWidth / 720, window.innerWidth / 720)
 		this.buttonReload.inputEnabled = true;
 		
