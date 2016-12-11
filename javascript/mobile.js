@@ -44,20 +44,20 @@ var mobileState = {
 															});
 		this.scorelabel.scale.setTo(window.innerWidth / 480, window.innerWidth / 480);
 
-		this.lifelabel = game.add.text(window.innerWidth * 0.6, window.innerHeight * 0.05, 'Your Lifes: ',{front : '10px Arial',
+		this.lifelabel = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.11, 'Your Lifes: ',{front : '10px Arial',
 																					  fill: '#ffffff'});
 		this.lifelabel.scale.setTo(window.innerWidth / 480, window.innerWidth / 480);
 
 		//creating the three hearts in thce group and render on the screen
 		for (var i = 0; i < this.lifes; i++){
-			this.hearts = this.heartsGroup.create(window.innerWidth * 0.75 + (i * window.innerWidth / 640 * 65), window.innerHeight * 0.05, "heart");
+			this.hearts = this.heartsGroup.create(window.innerWidth * 0.48 + (i * window.innerWidth / 640 * 65), window.innerHeight * 0.11, "heart");
 			this.hearts.scale.setTo(window.innerWidth / 640 * 0.3, window.innerWidth / 640 * 0.3);
 		}
 
 		//timer
 		game.time.events.add(30000, this.gameOver, this);
 		timeRemaining = 30;
-		timeRemainingText = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.11, "Time remaining:" + "30s", {
+		timeRemainingText = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.17, "Time remaining:" + "30s", {
 			font: "20px Arial",
         	fill: "#ffffff",
         	align: "left"	
