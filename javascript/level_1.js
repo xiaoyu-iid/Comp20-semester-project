@@ -92,10 +92,10 @@ var level_1State = {
 		for (var i = 0 ; i < totalAmount; i++){
 			if (i % 2 == 0){
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65 , 'triangle');
-				shape.scale.setTo(window.innerWidth / 960 * 0.65, window.innerWidth / 960 * 0.65);
+				shape.scale.setTo(window.innerWidth / 960 * 0.56, window.innerWidth / 960 * 0.56);
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'badtriangle');
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'polygon');
-				shape.scale.setTo(window.innerWidth / 960 * 0.95, window.innerWidth / 960 * 0.95);
+				shape.scale.setTo(window.innerWidth / 960 * 0.86, window.innerWidth / 960 * 0.86);
 				game.world.bringToTop(this.cm);
 			}
 		}
