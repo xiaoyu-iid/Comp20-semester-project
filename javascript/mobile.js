@@ -11,8 +11,8 @@ var mobileState = {
 		this.bgSound = game.add.audio('music');
 
 		//command picture
-		this.cm = game.add.sprite(window.innerWidth * 0.05, window.innerHeight * 0.75, 'command');
-		this.cm.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
+		this.cm = game.add.sprite(window.innerWidth * 0.02, window.innerHeight * 0.75, 'command');
+		this.cm.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
 		//this.cm.anchor.setTo ('10', '90');
 
 		//play music
