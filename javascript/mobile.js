@@ -11,7 +11,7 @@ var mobileState = {
 		this.bgSound = game.add.audio('music');
 
 		//command picture
-		this.cm = game.add.sprite(window.innerWidth * 0.02, window.innerHeight * 0.75, 'command');
+		this.cm = game.add.sprite(window.innerWidth * 0.03, window.innerHeight * 0.75, 'command');
 		this.cm.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
 		//this.cm.anchor.setTo ('10', '90');
 
@@ -97,11 +97,11 @@ var mobileState = {
 		for (var i = 0 ; i < totalAmount; i++){
 			if (i % 2 == 0){
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65 , 'triangle');
-				shape.scale.setTo(window.innerWidth / 960 * 0.56, window.innerWidth / 960 * 0.56);
+				shape.scale.setTo(window.innerWidth / 320 * 0.56, window.innerWidth / 320 * 0.56);
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'badtriangle');
-				shape.scale.setTo(window.innerWidth / 960, window.innerWidth / 960);
+				shape.scale.setTo(window.innerWidth / 320, window.innerWidth / 320);
 				shape = this.shapesGroup.create(game.world.randomX, window.innerHeight * 0.65, 'polygon');
-				shape.scale.setTo(window.innerWidth / 960 * 0.86, window.innerWidth / 960 * 0.86);
+				shape.scale.setTo(window.innerWidth / 320 * 0.86, window.innerWidth / 320 * 0.86);
 				game.world.bringToTop(this.cm);
 			}
 		}
