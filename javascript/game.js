@@ -9,6 +9,4 @@ game.state.add('load', loadState);
 
 game.state.add('mobile', mobileSate);
 game.state.add('level_1', level_1State);
-game.state.add('mobile', mobileState);
-
 game.state.start('boot');

@@ -2,15 +2,12 @@ var mobileState = {
 
 	create: function(){
 		//this.bg = game.add.sprite(0,0, 'sky');
-<<<<<<< HEAD:javascript/mobile.js
-}
+
 		//game.stage.backgroundColor = "#0000FF";
 		//this.hello = game.add.sprite(100, 100, 'heart');
-/*
-=======
-		console.log("MMMMMMMMMMMOOOOOBILE");
 
->>>>>>> 484a58a44fbe7f2a8d6d03f916692c3da32e837b:javascript/level_1_mobile.js
+		//console.log("MMMMMMMMMMMOOOOOBILE");
+
 		this.bgSound = game.add.audio('music');
 
 		//command picture
@@ -331,10 +328,6 @@ var mobileState = {
 		game.state.start('level_1');
 		
 	}
-<<<<<<< HEAD:javascript/mobile.js
-	*/
+
 	
 }
-=======
-}
->>>>>>> 484a58a44fbe7f2a8d6d03f916692c3da32e837b:javascript/level_1_mobile.js
