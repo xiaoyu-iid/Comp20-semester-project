@@ -7,6 +7,7 @@
         <meta name = "keywords" content = "shapes, game, geometry, education" />
 		<meta name = "description" content = "A geometric game for kids" />
 		<link href = "bootstrap/css/bootstrap.min.css" rel = "stylesheet" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src = "bootstrap/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/phaser/2.6.2/phaser.js"></script>
@@ -21,13 +22,21 @@
     <!-- facebook login api key -->
     <div id="fb-root"></div>
     <script src="facebooklogin.js"></script>
-
-
     <!-- needs to push the game online so that we can access the game online -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.4.2/phaser.min.js"></script>
 
-    <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
-
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Shapes!</a>
+                <a class="fb-login-button btn navbar-btn" data-size="medium" data-max-rows="1" data-show-faces="true" data-auto-logout-link="true">Sign in with Facebook</a>
+            </div>
+        </div>
+    </nav>
+    
+    <nav class="show-mobile">
+    	<a class="fb-login-button btn navbar-btn" data-size="medium" data-max-rows="1" data-show-faces="false" data-auto-logout-link="true">Sign in with Facebook</a>
+	</nav>
     <script src="javascript/boot.js" type="application/javascript"></script>
     <script src="javascript/load.js" type="application/javascript"></script>
     <script src="javascript/mobile.js" type = "application/javascript"></script>
