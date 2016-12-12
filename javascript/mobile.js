@@ -55,7 +55,7 @@ var mobileState = {
 		}
 
 		//timer
-		game.time.events.add(300, this.gameOver, this);
+		game.time.events.add(30000, this.gameOver, this);
 		timeRemaining = 30;
 		timeRemainingText = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.17, "Time remaining:" + "30s", {
 			font: "20px Arial",
