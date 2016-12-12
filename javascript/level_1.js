@@ -186,6 +186,7 @@ var level_1State = {
 		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboard");
 
 		//reload button
+
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 65, game.world.height * 0.55, "reload");
 		this.buttonReload.scale.setTo(window.innerWidth / 1080 * 0.5, window.innerWidth / 1080 * 0.5);
 		this.buttonReload.inputEnabled = true;
@@ -194,8 +195,11 @@ var level_1State = {
 
 		//leaderboard button
 
-		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.6, "leader");
+
+		this.buttonLeader = game.add.sprite(game.world.width / 2 , game.world.height * 0.55 , "leaderboard");
+
 		this.buttonLeader.scale.setTo(window.innerWidth / 1080 * 0.5, window.innerWidth / 1080 * 0.5);
+
 		this.buttonLeader.inputEnabled = true;
 
 		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
@@ -212,6 +216,7 @@ var level_1State = {
 		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonLeader).from({ y: -200}, 2000, Phaser.Easing.Bounce.Out, true);
 
 	},
 
