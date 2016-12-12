@@ -1,6 +1,17 @@
 myLat = 1000;
 myLng = 1000;
 
+$( document ).ready(function() {
+    $("#global").click(function() {
+		global_rank();
+	});
+
+	$("#local").click(function() {
+		getLocation();
+	});
+});
+
+
 function global_rank () {
 	$("#global").addClass("active");
 	$("#local").removeClass("active");
@@ -70,7 +81,7 @@ var rad = function(x) {
 	return x * Math.PI / 180;
 };
 
-window.onload=global_rank;
+window.onload = global_rank;
 
 function getLocation () {
 	$("#local").addClass("active");
