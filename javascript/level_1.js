@@ -345,7 +345,7 @@ var level_1State = {
 
 	leaderBoard: function(){
 
-		window.location.href = "http://tuftsdev.github.io/comp20-f2016-team8/leaderboard";
+		window.location.href = "leaderboard.html";
 
 	},
 
