@@ -185,12 +185,19 @@ var level_1State = {
 
 		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboard");
 
+		//reload button
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 65, game.world.height * 0.55, "reload");
 		this.buttonReload.scale.setTo(0.5, 0.5);
 		this.buttonReload.inputEnabled = true;
 		
-
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
+
+		//leaderboard button
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.6, "leader");
+		this.buttonLeader.scale.setTo(0.5, 0.5);
+		this.buttonLeader.inputEnabled = true;
+
+		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
 
 
 		game.world.bringToTop(this.finalScore);
@@ -248,6 +255,15 @@ var level_1State = {
 		
 
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
+
+
+		//leaderboard button
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.6, "leader");
+		this.buttonLeader.scale.setTo(0.5, 0.5);
+		this.buttonLeader.inputEnabled = true;
+
+		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
+		
 		//this.scoreBoardGroup.add(this.buttonReload);
 
 		//this.scoreBoardGroup.add(this.lifeFinalScore);
@@ -319,10 +335,13 @@ var level_1State = {
     	} else {
         	alert("Geolocation is not supported by this browser.");
     	}
-
-  
-
  	
+
+	},
+
+	leaderBoard: function(){
+
+		window.location.href = "http://tuftsdev.github.io/comp20-f2016-team8/leaderboard";
 
 	},
 
