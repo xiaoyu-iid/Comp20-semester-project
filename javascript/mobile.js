@@ -260,8 +260,8 @@ var mobileState = {
 		this.buttonReload.inputEnabled = true;
 		this.buttonReload.events.onInputDown.add(this.leaderboard, this);
 		*/
-		this.buttonLeader = game.add.sprite(game.world.width/2 - 131 * window.innerWidth / 720, game.world.height * 0.6, "leaderboard");
-		this.buttonLeader.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 131 * window.innerWidth / 720, game.world.height * 0.625, "leaderboard");
+		this.buttonLeader.scale.setTo(window.innerWidth / 740, window.innerWidth / 740);
 		this.buttonLeader.inputEnabled = true;
 
 		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
@@ -283,6 +283,7 @@ var mobileState = {
 		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonLeader).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 
 	},
 
