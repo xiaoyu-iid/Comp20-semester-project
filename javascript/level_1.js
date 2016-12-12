@@ -289,6 +289,8 @@ var level_1State = {
 
 	gameOver: function(shape){
 
+		var score = this.counterKill;
+
 		if (this.win){
 			this.bgSound.stop();
 			this.explodeSound.stop();
@@ -314,13 +316,11 @@ var level_1State = {
        			this.lat = position.coords.latitude;
        			this.lon = position.coords.longitude;
 
-       			console.log(localStorage.getItem("current_user"));
-
        			user = localStorage.getItem("current_user");
 		
 				var info_package = {
 				"username": user,
-				"score": this.counterKill,
+				"score": score,
 				"latitude": this.lat,
 				"longitude": this.lon
 				}
