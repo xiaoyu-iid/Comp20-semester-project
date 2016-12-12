@@ -314,6 +314,7 @@ var level_1State = {
        			this.lat = position.coords.latitude;
        			this.lon = position.coords.longitude;
 
+       			console.log(localStorage.getItem("current_user"));
 
        			user = localStorage.getItem("current_user");
 		
