@@ -11,7 +11,7 @@ var loadState = {
 
 		game.load.image('scoreboard', 'pictures/losescoreboard.png');
 		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
-		game.load.image('m_losescoreboard', 'pictures/winscoreboard.png');
+		game.load.image('m_losescoreboard', 'pictures/losescoreboard.png');
 		game.load.image('m_winscoreboard', 'pictures/winscoreboard.png');
 		
 		game.load.image('command', 'pictures/command_line.png');

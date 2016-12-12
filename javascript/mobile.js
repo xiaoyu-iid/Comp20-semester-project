@@ -242,7 +242,7 @@ var mobileState = {
 		//console.log("window" + (game.world.width / 2 - (225 * (game.world.width / 1144))));
 		//console.log ("should be" + (game.world.width / 2 - 225));
 
-		this.scoreBoardGroup.scale.setTo(0.5, 0.5);
+		this.scoreBoardGroup.scale.setTo(0.7, 0.7);
 		//this.scoreBoardGroup.position.x = (game.world.width / 2 - (450 * (game.world.width / 1144)));
 		//console.log (this.scoreBoardGroup.position.x);
 
