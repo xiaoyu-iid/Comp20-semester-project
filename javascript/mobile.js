@@ -260,6 +260,11 @@ var mobileState = {
 		this.buttonReload.inputEnabled = true;
 		this.buttonReload.events.onInputDown.add(this.leaderboard, this);
 		*/
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 131 * window.innerWidth / 720, game.world.height * 0.6, "leaderboard");
+		this.buttonLeader.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
+		this.buttonLeader.inputEnabled = true;
+
+		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
 
 		//this.scoreBoardGroup.add(this.buttonReload);
 
