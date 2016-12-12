@@ -193,7 +193,7 @@ var level_1State = {
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
 
 		//leaderboard button
-		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.6, "leader");
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.55 + 30, "leader");
 		this.buttonLeader.scale.setTo(0.5, 0.5);
 		this.buttonLeader.inputEnabled = true;
 
