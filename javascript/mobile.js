@@ -89,7 +89,7 @@ var mobileState = {
 
 	createShapes: function(){
 
-		var totalAmount = Math.floor(Math.random() * 3);
+		var totalAmount = Math.floor(Math.random() * 5);
 
 		var shape;
 
