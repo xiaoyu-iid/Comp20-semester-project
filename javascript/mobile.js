@@ -233,7 +233,7 @@ var mobileState = {
 
 		this.finalScore.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
 
-		this.scoreBoardGroup.create(window.innerWidth - 150 * game.world.width / 550, window.innerHeight * 0.47, "scoreboardwin");
+		this.scoreBoardGroup.create(window.innerWidth * 0.4, window.innerHeight * 0.47, "m_winscoreboard");
 		//console.log("gameworld" + game.world.width);
 		//console.log("gameworld" + game.world.width/2);
 		//console.log("gameworld" + (game.world.width/2 - 225 ));
@@ -242,7 +242,7 @@ var mobileState = {
 		//console.log("window" + (game.world.width / 2 - (225 * (game.world.width / 1144))));
 		//console.log ("should be" + (game.world.width / 2 - 225));
 
-		this.scoreBoardGroup.scale.setTo(game.world.width / 550, game.world.width / 550);
+		this.scoreBoardGroup.scale.setTo(0.7, 0.7);
 		//this.scoreBoardGroup.position.x = (game.world.width / 2 - (450 * (game.world.width / 1144)));
 		//console.log (this.scoreBoardGroup.position.x);
 
@@ -260,8 +260,8 @@ var mobileState = {
 		this.buttonReload.inputEnabled = true;
 		this.buttonReload.events.onInputDown.add(this.leaderboard, this);
 		*/
-		this.buttonLeader = game.add.sprite(game.world.width/2 - 131 * window.innerWidth / 720, game.world.height * 0.6, "leaderboard");
-		this.buttonLeader.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 131 * window.innerWidth / 720, game.world.height * 0.625, "leaderboard");
+		this.buttonLeader.scale.setTo(window.innerWidth / 740, window.innerWidth / 720);
 		this.buttonLeader.inputEnabled = true;
 
 		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
@@ -283,6 +283,7 @@ var mobileState = {
 		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonLeader).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 
 	},
 
