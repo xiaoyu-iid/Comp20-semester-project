@@ -16,7 +16,7 @@ function global_rank () {
 	$("#global").addClass("active");
 	$("#local").removeClass("active");
 	$("#mytable").empty();
-	$.get("http://immense-plateau-64166.herokuapp.com/scores.json", function(data){
+	$.get("https://immense-plateau-64166.herokuapp.com/scores.json", function(data){
 		data_array = JSON.parse(data);
 		var html = "<thead><tr><th>Username</th><th>Score</th><th>Time</th></tr></thead><tbody>";
 		for (i=0 ; i< data_array.length; i++){
@@ -35,7 +35,7 @@ function global_rank () {
 
 
 function local_rank () {
-	$.get("http://immense-plateau-64166.herokuapp.com/scores.json", function(data){
+	$.get("https://immense-plateau-64166.herokuapp.com/scores.json", function(data){
 		data_array = JSON.parse(data);
 		var winner = "";
 		var html = "<thead><tr><th>Username</th><th>Score</th><th>How far from me (miles)</th></tr></thead><tbody>";
