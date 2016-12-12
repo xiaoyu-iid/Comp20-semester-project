@@ -170,52 +170,10 @@ var mobileState = {
 	},
 
 	showScoreBoardLose: function(){
-		this.gameOverLabel = game.add.text(window.innerWidth * 0.37, window.innerHeight * 0.32, this.messageGameOver, {
-																							font : '50px Arial',
-																							fill: '#ffffff'
-																						});
-		this.gameOverLabel.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
-		//this.gameOverLabel.anchor.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
 
-		this.lifeFinalScore = game.add.text(window.innerWidth * 0.36, window.innerHeight * 0.29,'Life Remaining: ', {
-																								  font : '30px Arial',
-																								  fill: '#000000'
-																								});
-		this.lifeFinalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
+		//timeRemainingText.setText("Time remaining: " + "0s");
 
-		this.finalScore = game.add.text(window.innerWidth * 0.4, window.innerHeight * 0.395, 'Triangles: ', {font : '30px Arial',
-																				   		 	fill: '#000000'})
-
-		this.finalScore.scale.setTo(window.innerWidth / 1080, window.innerWidth / 1080);
-
-		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboard");
-
-		this.buttonReload = game.add.sprite(game.world.width / 2 - 15, game.world.height * 0.6, "reload");
-		this.buttonReload.scale.setTo(window.innerWidth / 10800, window.innerWidth / 10800)
-		this.buttonReload.inputEnabled = true;
-		
-
-		this.buttonReload.events.onInputDown.add(this.restartGame, this);
-
-
-		game.world.bringToTop(this.finalScore);
-		game.world.bringToTop(this.lifeFinalScore);
-
-		this.lifeFinalScore.text = "Life Remaining: " + this.lifes;
-		this.finalScore.text = "Triangles: " + this.counterKill;
-
-		game.add.tween(this.scoreBoardGroup).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
-		game.add.tween(this.lifeFinalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
-		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
-		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
-		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
-
-	},
-
-	showScoreWin: function(){
-		timeRemainingText.setText("Time remaining: " + "0s");
-
-		this.gameOverLabel = game.add.text(window.innerWidth * 0.31, window.innerHeight * 0.22, this.messageGameOver, {
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.31, window.innerHeight * 0.2, this.messageGameOver, {
 																							font : '50px Arial',
 																							fill: '#ff0000'
 																						});
@@ -233,7 +191,63 @@ var mobileState = {
 
 		this.finalScore.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
 
-		this.scoreBoardGroup.create(window.innerWidth * 0.4 - 45, window.innerHeight * 0.45, "m_winscoreboard");
+		this.scoreBoardGroup.create(window.innerWidth * 0.27, window.innerHeight * 0.45, "m_losescoreboard");
+
+		this.scoreBoardGroup.scale.setTo(0.7, 0.6);
+		//this.scoreBoardGroup.position.x = (game.world.width / 2 - (450 * (game.world.width / 1144)));
+		//console.log (this.scoreBoardGroup.position.x);
+
+
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 131 * window.innerWidth / 720, game.world.height * 0.525, "reload");
+		this.buttonReload.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
+		this.buttonReload.inputEnabled = true;
+		
+
+		this.buttonReload.events.onInputDown.add(this.restartGame, this);
+
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 131 * window.innerWidth / 720, game.world.height * 0.625, "leaderboard");
+		this.buttonLeader.scale.setTo(window.innerWidth / 740, window.innerWidth / 720);
+		this.buttonLeader.inputEnabled = true;
+
+		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
+
+		game.world.bringToTop(this.finalScore);
+		game.world.bringToTop(this.lifeFinalScore);
+
+		this.lifeFinalScore.text = "Life Remaining: " + this.lifes;
+		this.finalScore.text = "Triangles: " + this.counterKill;
+
+		game.add.tween(this.scoreBoardGroup).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.lifeFinalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonLeader).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+
+	},
+
+	showScoreWin: function(){
+		timeRemainingText.setText("Time remaining: " + "0s");
+
+		this.gameOverLabel = game.add.text(window.innerWidth * 0.31, window.innerHeight * 0.2, this.messageGameOver, {
+																							font : '50px Arial',
+																							fill: '#ff0000'
+																						});
+		this.gameOverLabel.scale.setTo(window.innerWidth / 680, window.innerWidth / 680);
+		//this.gameOverLabel.anchor.setTo(window.innerWidth / 1280, window.innerWidth / 1280);
+
+		this.lifeFinalScore = game.add.text(window.innerWidth * 0.29, window.innerHeight * 0.35,'Life Remaining: ', {
+																								  font : '30px Arial',
+																								  fill: '#000000'
+																								});
+		this.lifeFinalScore.scale.setTo(window.innerWidth / 600, window.innerWidth / 600);
+
+		this.finalScore = game.add.text(window.innerWidth * 0.35, window.innerHeight * 0.425, 'Triangles: ', {font : '30px Arial',
+																				   		 	fill: '#000000'})
+
+		this.finalScore.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
+
+		this.scoreBoardGroup.create(window.innerWidth * 0.27, window.innerHeight * 0.45, "m_winscoreboard");
 
 		//console.log("gameworld" + game.world.width);
 		//console.log("gameworld" + game.world.width/2);
@@ -255,12 +269,6 @@ var mobileState = {
 
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
 
-/*
-		this.buttonLeader = game.add. sprite(game.world.width / 2 - 131 * window.innerWidth / 720, game.world.height * 0.6, "leaderboard");
-		this.buttonLeader.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
-		this.buttonReload.inputEnabled = true;
-		this.buttonReload.events.onInputDown.add(this.leaderboard, this);
-		*/
 		this.buttonLeader = game.add.sprite(game.world.width/2 - 131 * window.innerWidth / 720, game.world.height * 0.625, "leaderboard");
 		this.buttonLeader.scale.setTo(window.innerWidth / 740, window.innerWidth / 720);
 		this.buttonLeader.inputEnabled = true;
