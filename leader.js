@@ -1,8 +1,6 @@
 myLat = 1000;
 myLng = 1000;
 
-$("#winner").html("active");
-
 function global_rank () {
 	$("#global").addClass("active");
 	$("#local").removeClass("active");
