@@ -186,15 +186,29 @@ var level_1State = {
 		this.scoreBoardGroup.create((game.world.width / 2 - 225), window.innerHeight * 0.2, "scoreboard");
 
 		//reload button
+<<<<<<< HEAD
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 65 , game.world.height * 0.55, "reload");
 		this.buttonReload.scale.setTo(0.5, 0.5);
+=======
+		this.buttonReload = game.add.sprite(game.world.width / 2 - 65, game.world.height * 0.55, "reload");
+		this.buttonReload.scale.setTo(window.innerWidth / 1080 * 0.5, window.innerWidth / 1080 * 0.5);
+>>>>>>> origin/gh-pages
 		this.buttonReload.inputEnabled = true;
 		
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
 
 		//leaderboard button
+<<<<<<< HEAD
 		this.buttonLeader = game.add.sprite(game.world.width / 2 , game.world.height * 0.55 , "leaderboard");
+=======
+<<<<<<< HEAD
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.6, "leader");
+		this.buttonLeader.scale.setTo(window.innerWidth / 1080 * 0.5, window.innerWidth / 1080 * 0.5);
+=======
+		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.55 + 30, "leader");
+>>>>>>> origin/gh-pages
 		this.buttonLeader.scale.setTo(0.5, 0.5);
+>>>>>>> ca664e36605de24e12b5d79d7b4e7bd3a2af268f
 		this.buttonLeader.inputEnabled = true;
 
 		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
@@ -251,7 +265,7 @@ var level_1State = {
 
 
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 65, game.world.height * 0.55, "reload");
-		this.buttonReload.scale.setTo(0.5, 0.5);
+		this.buttonReload.scale.setTo(window.innerWidth / 1080 * 0.5, window.innerWidth / 1080 * 0.5);
 		this.buttonReload.inputEnabled = true;
 		
 
@@ -260,7 +274,7 @@ var level_1State = {
 
 		//leaderboard button
 		this.buttonLeader = game.add.sprite(game.world.width/2 - 65, game.world.height * 0.6, "leader");
-		this.buttonLeader.scale.setTo(0.5, 0.5);
+		this.buttonLeader.scale.setTo(window.innerWidth / 1080 * 0.5, window.innerWidth / 1080 * 0.5);
 		this.buttonLeader.inputEnabled = true;
 
 		this.buttonLeader.events.onInputDown.add(this.leaderBoard, this);
