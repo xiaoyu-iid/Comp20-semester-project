@@ -298,6 +298,7 @@ var mobileState = {
 
 	gameOver: function(shape){
 
+		var score = this.counterKill;
 		if (this.win){
 			this.bgSound.stop();
 			this.explodeSound.stop();
@@ -326,7 +327,7 @@ var mobileState = {
 			user = localStorage.getItem("current_user");
 			var info_package = {
 				"username": user,
-				"score": this.counterKill,
+				"score": score,
 				"latitude": this.lat,
 				"longitude": this.lon
 			}
@@ -359,7 +360,7 @@ var mobileState = {
 	restartGame: function(){
 
 		game.time.events.start();
-		game.state.start('level_1');
+		game.state.start('mobile');
 		
 	}
 
