@@ -1,6 +1,8 @@
 myLat = 1000;
 myLng = 1000;
 
+$("#winner").html("active");
+
 function global_rank () {
 	$("#global").addClass("active");
 	$("#local").removeClass("active");
@@ -18,6 +20,7 @@ function global_rank () {
 		} 
 		html += "</tbody>";
 		$('#mytable').append(html);
+		$("#winner").html(data_array[0].username);
 	});
 }
 
@@ -25,6 +28,7 @@ function global_rank () {
 function local_rank () {
 	$.get("http://immense-plateau-64166.herokuapp.com/scores.json", function(data){
 		data_array = JSON.parse(data);
+		var winner = "";
 		var html = "<thead><tr><th>Username</th><th>Score</th><th>How far from me (miles)</th></tr></thead><tbody>";
 		for (i=0 ; i< data_array.length; i++){
 
@@ -39,9 +43,13 @@ function local_rank () {
 				html += '<td>' + data_array[i].score + '</td>';
 				html += '<td>' + distance + '</td>';
 				html += '</tr>';
+				if (winner == "") {
+					winner = data_array[i].username;
+				}
 			}
 		} 
 		html += "</tbody>";
+		$("#winner").html(winner);
 		$("#mytable").empty();
 		$('#mytable').append(html);
 	});
