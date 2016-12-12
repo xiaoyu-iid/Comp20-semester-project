@@ -248,11 +248,18 @@ var mobileState = {
 
 
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 131 * window.innerWidth / 720, game.world.height * 0.525, "reload");
-		this.buttonReload.scale.setTo(window.innerWidth / 720, window.innerWidth / 720)
+		this.buttonReload.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
 		this.buttonReload.inputEnabled = true;
 		
 
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
+
+
+		this.buttonLeader = game.add. sprite(game.world.width / 2 - 131 * window.innerWidth / 720, game.world.height * 0.6, "leaderboard");
+		this.buttonLeader.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
+		this.buttonReload.inputEnabled = true;
+		this.buttonReload.events.onInputDown.add(this.leaderboard, this);
+
 		//this.scoreBoardGroup.add(this.buttonReload);
 
 		//this.scoreBoardGroup.add(this.lifeFinalScore);
@@ -323,6 +330,13 @@ var mobileState = {
     	}
 
     	
+
+	},
+
+
+	leaderBoard: function(){
+
+		window.location.href = "http://tuftsdev.github.io/comp20-f2016-team8/leaderboard";
 
 	},
 
