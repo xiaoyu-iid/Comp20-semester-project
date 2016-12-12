@@ -324,6 +324,8 @@ var level_1State = {
 				"latitude": this.lat,
 				"longitude": this.lon
 				}
+
+				console.log(info_package);
 				
 				$.ajax ({
        				type: "POST",
