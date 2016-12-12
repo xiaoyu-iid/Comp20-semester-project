@@ -1,6 +1,7 @@
 @media only screen and (max-device-width: 480px) {
       .show-mobile {
         display: block;
+        font-color: #ffffff;
       }
       .navbar{
         display: none;
