@@ -33,7 +33,7 @@ function local_rank () {
 			distance = calc_dist({latitude: myLat, longitude: myLng}, {latitude: user_latitude, longitude: user_longitude});
 		    distance = Math.round(distance*1000)/1000;
 
-			if (distance < 25) {
+			if (distance < 50) {
 				html += "<tr>";
 				html += '<td>' + data_array[i].username + '</td>';
 				html += '<td>' + data_array[i].score + '</td>';
