@@ -233,7 +233,7 @@ var mobileState = {
 
 		this.finalScore.scale.setTo(window.innerWidth / 720, window.innerWidth / 720);
 
-		this.scoreBoardGroup.create(window.innerWidth * 0.5 - 85, window.innerHeight * 0.45, "m_winscoreboard");
+		this.scoreBoardGroup.create(window.innerWidth * 0.4 - 65, window.innerHeight * 0.45, "m_winscoreboard");
 
 		//console.log("gameworld" + game.world.width);
 		//console.log("gameworld" + game.world.width/2);
