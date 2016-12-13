@@ -43,8 +43,8 @@ var loadState = {
 			//game.add.text(150, 300, "Hello load is working", {front: '10 px Arial'}, fill: '#0000FF');
 
 			//game.scale.setScreenSize(true)
-			this.gameStart = game.add.sprite(game.world.width /2 - 150, game.world.height / 2, "startgame");
-			this.gameStart.scale.setTo(window.innerWidth / 1080 * 0.45, window.innerWidth / 1080 * 0.45);
+			this.gameStart = game.add.sprite(game.world.width * 0.275, game.world.height * 0.475, "startgame");
+			this.gameStart.scale.setTo(window.innerWidth / 300 * 0.45, window.innerWidth / 300 * 0.45);
 			this.gameStart.inputEnabled = true;
 
 			this.gameStart.events.onInputDown.add(this.startMobile, this);
