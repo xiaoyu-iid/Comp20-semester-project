@@ -8,6 +8,7 @@ var loadState = {
 		game.load.image('polygon', 'pictures/polygon-blue.png');
 		game.load.image('reload', 'pictures/reload.png');
 		game.load.image('leaderboard', 'pictures/leader_button.png');
+		game.load.image('startgame', 'pictures/startgame.png');
 
 		game.load.image('scoreboard', 'pictures/losescoreboard.png');
 		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
@@ -42,10 +43,12 @@ var loadState = {
 			//game.add.text(150, 300, "Hello load is working", {front: '10 px Arial'}, fill: '#0000FF');
 
 			//game.scale.setScreenSize(true)
-			game.state.start('mobile');
+			this.gameStart = game.add.sprite(game.world.width /2 - 150, game.world.height / 2, "startgame");
+			this.gameStart.scale.setTo(window.innerWidth / 1080 * 0.45, window.innerWidth / 1080 * 0.45);
+			this.gameStart.inputEnabled = true;
 
-			//game.scale.setScreenSize(true);
-			//console.log ("mobile")
+			this.gameStart.events.onInputDown.add(this.startMobile, this);
+			
 
 		} else {
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -62,11 +65,24 @@ var loadState = {
    			game.scale.pageAlignHorizontally = true;
     		game.scale.pageAlignVertically = true;
 
+    		this.gameStart = game.add.sprite(game.world.width /2 - 150, game.world.height / 2, "startgame");
+			this.gameStart.scale.setTo(window.innerWidth / 1080 * 0.7, window.innerWidth / 1080 * 0.7);
+			this.gameStart.inputEnabled = true;
 
-    		game.state.start('level_1');
+			this.gameStart.events.onInputDown.add(this.startGame, this);
+			
 		}
 
 
+	},
+
+	startGame: function(){
+		game.state.start('level_1');
+
+	},
+
+	startMobile: function(){
+		game.state.start('mobile');
 	}
 	
 }

@@ -261,7 +261,7 @@ var level_1State = {
 
 
 		//leaderboard button
-		this.buttonLeader = game.add.sprite(game.world.width/2 , game.world.height * 0.6, "leaderboard");
+		this.buttonLeader = game.add.sprite(game.world.width/2 , game.world.height * 0.55, "leaderboard");
 		this.buttonLeader.scale.setTo(window.innerWidth / 1080 * 0.45, window.innerWidth / 1080 * 0.45);
 		this.buttonLeader.inputEnabled = true;
 
@@ -284,6 +284,7 @@ var level_1State = {
 		game.add.tween(this.finalScore).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.gameOverLabel).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 		game.add.tween(this.buttonReload).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
+		game.add.tween(this.buttonLeader).from( { y: -200 }, 2000, Phaser.Easing.Bounce.Out, true);
 
 	},
 
@@ -324,6 +325,8 @@ var level_1State = {
 				"latitude": this.lat,
 				"longitude": this.lon
 				}
+
+				console.log(info_package);
 				
 				$.ajax ({
        				type: "POST",
@@ -345,7 +348,7 @@ var level_1State = {
 
 	leaderBoard: function(){
 
-		window.location.href = "http://tuftsdev.github.io/comp20-f2016-team8/leaderboard";
+		window.location.href = "leaderboard.html";
 
 	},
 
