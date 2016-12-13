@@ -9,6 +9,8 @@ var loadState = {
 		game.load.image('reload', 'pictures/reload.png');
 		game.load.image('leaderboard', 'pictures/leader_button.png');
 		game.load.image('startgame', 'pictures/startgame.png');
+		game.load.image('logo', 'pictures/logo.png');
+		game.load.image('slogan', 'pictures/slogan.png');
 
 		game.load.image('scoreboard', 'pictures/losescoreboard.png');
 		game.load.image('scoreboardwin', 'pictures/winscoreboard.png');
@@ -64,7 +66,10 @@ var loadState = {
    			game.scale.pageAlignHorizontally = true;
     		game.scale.pageAlignVertically = true;
 
-    		gameStart = game.add.sprite(game.world.width /2 - 135, game.world.height / 2-55, "startgame");
+    		label = game.add.sprite(game.world.width / 2 - 160, game.world.height / 2 - 160, "logo");
+    		slogan = game.add.sprite(game.world.width / 2 -170, game.world.height / 2 - 135, "slogan");
+
+    		gameStart = game.add.sprite(game.world.width /2 - 110, game.world.height / 2 - 15, "startgame");
 			gameStart.scale.setTo(window.innerWidth / 1080 * 0.7, window.innerWidth / 1080 * 0.7);
 			gameStart.inputEnabled = true;
 			gameStart.alpha = 0.5;
@@ -86,8 +91,8 @@ var loadState = {
 	        	gameStart.alpha = 1;
 	        	//this.explodeSound.play();
  	    	} else {
- 	    		gameStart.x = game.world.width /2 - 135;
-	    		gameStart.y = game.world.height / 2 - 55;
+ 	    		gameStart.x = game.world.width /2 - 110;
+	    		gameStart.y = game.world.height / 2 - 15;
         		gameStart.scale.setTo(window.innerWidth / 1080 * 0.7, window.innerWidth / 1080 * 0.7);
         		gameStart.alpha = 0.5;
     		}
