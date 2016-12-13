@@ -9,3 +9,8 @@ body {
 th {
 	text-align: center;
 }
+
+.pull-right {
+  float: right !important;
+  margin-right: 10px;
+}
