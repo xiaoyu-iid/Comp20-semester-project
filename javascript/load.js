@@ -43,12 +43,11 @@ var loadState = {
 			//game.add.text(150, 300, "Hello load is working", {front: '10 px Arial'}, fill: '#0000FF');
 
 			//game.scale.setScreenSize(true)
-			this.gameStart = game.add.sprite(game.world.width * 0.275, game.world.height * 0.475, "startgame");
-			this.gameStart.scale.setTo(window.innerWidth / 300 * 0.45, window.innerWidth / 300 * 0.45);
-			this.gameStart.inputEnabled = true;
+			gameStart = game.add.sprite(game.world.width * 0.275, game.world.height * 0.475, "startgame");
+			gameStart.scale.setTo(window.innerWidth / 300 * 0.45, window.innerWidth / 300 * 0.45);
+			gameStart.inputEnabled = true;
 
-			this.gameStart.events.onInputDown.add(this.startMobile, this);
-			
+			gameStart.events.onInputDown.add(this.startMobile, this);
 
 		} else {
 			//game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -65,14 +64,34 @@ var loadState = {
    			game.scale.pageAlignHorizontally = true;
     		game.scale.pageAlignVertically = true;
 
-    		this.gameStart = game.add.sprite(game.world.width /2 - 150, game.world.height / 2, "startgame");
-			this.gameStart.scale.setTo(window.innerWidth / 1080 * 0.7, window.innerWidth / 1080 * 0.7);
-			this.gameStart.inputEnabled = true;
+    		gameStart = game.add.sprite(game.world.width /2 - 135, game.world.height / 2-55, "startgame");
+			gameStart.scale.setTo(window.innerWidth / 1080 * 0.7, window.innerWidth / 1080 * 0.7);
+			gameStart.inputEnabled = true;
+			gameStart.alpha = 0.5;
 
-			this.gameStart.events.onInputDown.add(this.startGame, this);
+			gameStart.events.onInputDown.add(this.startGame, this);
+			//this.explodeSound = game.add.audio('explode');
+
 			
 		}
 
+
+	},
+
+	update: function() {
+
+		if(game.device.desktop){
+	    	if (gameStart.input.pointerOver()) {
+	        	gameStart.scale.setTo(window.innerWidth / 1080 * 0.8, window.innerWidth / 1080 * 0.8);
+	        	gameStart.alpha = 1;
+	        	//this.explodeSound.play();
+ 	    	} else {
+ 	    		gameStart.x = game.world.width /2 - 135;
+	    		gameStart.y = game.world.height / 2 - 55;
+        		gameStart.scale.setTo(window.innerWidth / 1080 * 0.7, window.innerWidth / 1080 * 0.7);
+        		gameStart.alpha = 0.5;
+    		}
+    	}
 
 	},
 

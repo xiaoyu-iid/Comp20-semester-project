@@ -33,6 +33,7 @@ var level_1State = {
 		this.messageGameOver = "Time's up!";
 		this.scoreBoardGroup = game.add.group();
 
+
 		//can change the style of characters later
 		this.scorelabel = game.add.text(window.innerWidth * 0.03, window.innerHeight * 0.05,'Numbers: 0', {front : "10px Arial",
 															 fill: "#ffffff"
@@ -79,6 +80,17 @@ var level_1State = {
 		this.shapesGroup.forEach(this.moveShapes, this);
 		//update the timer 
 		timeRemainingText.setText("Time remaining: " + timeRemaining + "s");
+
+		/* 
+		if (this.buttonReload.input.pointerOver()) {
+	        	this.buttonReload.scale.setTo(window.innerWidth / 1080 * 0.8, window.innerWidth / 1080 * 0.8);
+	        	this.buttonReload.alpha = 1;
+ 	    	} else {
+ 	    		this.buttonReload.x = game.world.width /2 - 135;
+	    		this.buttonReload.y = game.world.height / 2 - 55;
+        		this.buttonReload.scale.setTo(window.innerWidth / 1080 * 0.7, window.innerWidth / 1080 * 0.7);
+        		this.buttonReload.alpha = 0.5;
+    	} */
 
 	},
 
@@ -255,7 +267,7 @@ var level_1State = {
 		this.buttonReload = game.add.sprite(game.world.width / 2 - 150, game.world.height * 0.55, "reload");
 		this.buttonReload.scale.setTo(window.innerWidth / 1080 * 0.45, window.innerWidth / 1080 * 0.45);
 		this.buttonReload.inputEnabled = true;
-		
+		this.buttonReload.alpha = 0.5;
 
 		this.buttonReload.events.onInputDown.add(this.restartGame, this);
 
