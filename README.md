@@ -5,7 +5,7 @@ By: Siming Chen, Xiaoyu Shi, Jailu Wei, Tianyu Zhu
 
 ## Project title: 
 
-Shapes Pop!
+Shapes!
 
 ## Problem statement:
 
@@ -22,10 +22,9 @@ Play our game and get more knowledge about geometry (or other items). For exampl
 - We will collect user performance data (including scores, progress in the game, etc.) on the server. 
         
         Utilizing: Server-side data persistence
-- We would ask for user’s Google accounts for secure log-in. 
+- We would ask for user’s Facebook accounts for secure log-in. 
         
-        Utilizing: use Google Identity Platform API
-        (NOTE: This one is optional, we will decide how much user's personal information we need to use when we implement the score ranking. )
+        Utilizing: use Facebook Login
 - We will store user's progress, as well as user-selected username and profile pictures(if we implement user login) locally. 
          
         Utilizing: Client-side data persistence 
